@@ -44,12 +44,12 @@ bool Character::isAlive() {
 }
 
 void Character::receiveDamage(int32_t damage, std::string attackerName) {
-	m_currentHp = Utility::clamp(damage, 0, m_maxHp);;
+	Utility::clamp(&m_currentHp, damage, 0, m_maxHp);;
 	std::cout << "\n\n> " << m_name <<" Outch !\n" << attackerName << " Attacked me ! Lost " << damage << " hp !" <<std::endl;
 }
 
 void Character::heal(int32_t damage) {
-	m_currentHp = Utility::clamp(damage, 0, m_maxHp);
+	Utility::clamp(&m_currentHp, damage, 0, m_maxHp);
 }
 
 Weapon* Character::getWeapon() {
