@@ -20,6 +20,7 @@ GameMenu *GameMenu::getInstance() {
 
 void GameMenu::drawMenu(int menuIndex) {
 	system("cls");
+
 	std::ifstream title;
 	title.open("ui/title.ui", std::ios::in);
 	if (title.is_open())
@@ -56,7 +57,8 @@ void GameMenu::selectAction(int menuIndex)
 		key_press = _getch();
 		ascii_value = key_press;
 		int maxIndex = m_menus.at(menuIndex).size() - 1;
-		if (ascii_value == 80) {
+		if (ascii_value == 80) 
+		{
 			m_currIndex++;
 			if (m_currIndex > maxIndex) {
 				m_currIndex = 1;
@@ -64,7 +66,8 @@ void GameMenu::selectAction(int menuIndex)
 			drawMenu(menuIndex);
 			break;
 		}
-		else if (ascii_value == 72) {
+		else if (ascii_value == 72) 
+		{
 			m_currIndex--;
 			if (m_currIndex < 1) {
 				m_currIndex = maxIndex;

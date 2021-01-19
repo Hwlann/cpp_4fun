@@ -1,1 +1,13 @@
-﻿  Character.cpp
+﻿  Effects.cpp
+  GameManager.cpp
+D:\Classes\Ynov - B3 - Informatique\Cpp\cpp_4fun\GameManager.cpp(5,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Character.cpp
+  GameMenu.cpp
+D:\Classes\Ynov - B3 - Informatique\Cpp\cpp_4fun\GameMenu.cpp(59,50): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  Tp_Jeux_CPP01.cpp
+  Utility.cpp
+  Warrior.cpp
+  Weapon.cpp
+  Génération de code en cours...
+Character.obj : error LNK2019: symbole externe non résolu "public: static int __cdecl Utility::clamp(int,int,int)" (?clamp@Utility@@SAHHHH@Z) référencé dans la fonction "public: void __cdecl Character::heal(int)" (?heal@Character@@QEAAXH@Z)
+D:\Classes\Ynov - B3 - Informatique\Cpp\cpp_4fun\x64\Debug\Tp_Jeux_CPP01.exe : fatal error LNK1120: 1 externes non résolus
