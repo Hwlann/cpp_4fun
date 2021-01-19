@@ -4,6 +4,7 @@ GameMenu *GameMenu::m_gameMenu = nullptr;
 
 GameMenu::GameMenu() {
 	m_currIndex = 1;
+	m_numberOfPlayers = DEF_MIN_PLAYERS_COUNT;
 	drawMenu(DEF_MAIN_MENU);
 }
 
@@ -35,7 +36,9 @@ void GameMenu::drawMenu(int menuIndex) {
 
 	for (int i = 1; i < m_menus.at(menuIndex).size(); i++) {
 		std::cout << "\t\t\t";
-		i == m_currIndex ? std::cout << DEF_SELECT_CHAR << " " : std::cout << "  ";
+		(i == m_currIndex) ? std::cout << DEF_SELECT_CHAR << " " : std::cout << "  ";
+		if (menuIndex == DEF_HOW_MANY && i == 1)
+			std::cout << m_numberOfPlayers << " ";
 		std::cout << m_menus.at(menuIndex).at(i) << std::endl;
 	}
 	title.close();
@@ -57,6 +60,23 @@ void GameMenu::selectAction(int menuIndex)
 		key_press = _getch();
 		ascii_value = key_press;
 		int maxIndex = m_menus.at(menuIndex).size() - 1;
+		if (menuIndex == DEF_HOW_MANY)
+		{
+			if (ascii_value == 75 && m_currIndex == 1)
+			{
+				m_numberOfPlayers --;
+				Utility::clamp(&m_numberOfPlayers, DEF_MIN_PLAYERS_COUNT, DEF_MAX_PLAYERS_COUNT);
+				drawMenu(menuIndex);
+				break;
+			}
+			if (ascii_value == 77 && m_currIndex == 1)
+			{
+				m_numberOfPlayers ++;
+				Utility::clamp(&m_numberOfPlayers, DEF_MIN_PLAYERS_COUNT, DEF_MAX_PLAYERS_COUNT);
+				drawMenu(menuIndex);
+				break;
+			}
+		}
 		if (ascii_value == 80) 
 		{
 			m_currIndex++;
@@ -89,27 +109,54 @@ void GameMenu::menuSelected(int menuIndex, int index) {
 	if (m_index < m_menus.at(menuIndex).size() && m_index > 0) {
 		switch (menuIndex) {
 		case DEF_MAIN_MENU:
-			m_index == 1 ? drawMenu(DEF_HOW_MANY) : drawMenu(DEF_EXIT_CONFIRM);
+			switch (m_index)
+			{
+			case 1:
+				m_currIndex = 1;
+				drawMenu(DEF_HOW_MANY);
+				break;
+			case 2:
+				m_currIndex = 1;
+				drawMenu(DEF_OPTIONS);
+				break;
+			case 3:
+				m_currIndex = 1;
+				drawMenu(DEF_EXIT_CONFIRM);
+				break;
+			}
 			break;
 		case DEF_EXIT_CONFIRM:
-			m_index == 1 ? exit(EXIT_SUCCESS) : drawMenu(DEF_MAIN_MENU);
+			(m_index == 1) ? exit(EXIT_SUCCESS) : drawMenu(DEF_MAIN_MENU);
 			break;
 		case DEF_HOW_MANY:
 			switch (m_index)
 			{
 			case 1:
-				startNewGame(2);
+				GameManager::getInstance()->initNewGame(m_numberOfPlayers);
 				break;
 			case 2:
-				startNewGame(3);
-				break;
-			case 3:
-				startNewGame(4);
-				break;
-			case 4:
 				drawMenu(DEF_MAIN_MENU);
 				break;
 			}
+			break;
+		case DEF_OPTIONS:
+			switch (m_index)
+			{
+			case 1:
+				m_currIndex++;
+				drawMenu(DEF_OPTIONS);
+				break;
+			case 2:
+				m_currIndex = 1;
+				applyOptions();
+				drawMenu(DEF_MAIN_MENU);
+				break;
+			case 3:
+				m_currIndex = 1;
+				drawMenu(DEF_MAIN_MENU);
+				break;
+			}
+			break;
 		}
 	}
 	else {
@@ -118,3 +165,7 @@ void GameMenu::menuSelected(int menuIndex, int index) {
 	}
 }
 
+void GameMenu::applyOptions() 
+{
+	std::fstream optionsFile;
+}
