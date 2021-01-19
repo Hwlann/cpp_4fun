@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,6 +146,7 @@
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="Tp_Jeux_CPP01.cpp" />
     <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +155,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="Utility.h" />
+    <ClInclude Include="Warrior.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

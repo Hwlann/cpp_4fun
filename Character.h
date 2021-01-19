@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "Weapon.h"
+#include "Utility.h"
 
 // DEFINES
 constexpr int32_t WARRIOR_MAX_HP = 150;
@@ -44,13 +45,13 @@ class Character
 		void setPosition(CharacterPosition* position);
 
 		// METHODS
-		void receiveDamage(int32_t hp, std::string attackerName);
+		void receiveDamage(int32_t damage, std::string attackerName);
 		void heal(int32_t damage);
 		bool isAlive();
 		void attackTarget(Character *target);
 		//void swapWeapon(std::string weaponName);
 
-	private:
+	protected:
 		// VARIABLES
 		int32_t m_maxHp = 0;
 		int32_t m_currentHp = 0;

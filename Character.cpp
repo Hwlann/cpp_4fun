@@ -1,6 +1,5 @@
 #include "Character.h"
 
-
 Character::Character(std::string name, CharacterClass characterClass) :
 	m_name(name),
 	m_characterClass(characterClass)
@@ -44,13 +43,13 @@ bool Character::isAlive() {
 	}
 }
 
-void Character::receiveDamage(int32_t hp, std::string attackerName) {
-	m_currentHp -= hp;
-	std::cout << "\n\n> " << m_name <<" Outch !\n" << attackerName << " Attacked me ! Lost " << hp << " hp !" <<std::endl;
+void Character::receiveDamage(int32_t damage, std::string attackerName) {
+	m_currentHp = Utility::clamp(damage, 0, m_maxHp);;
+	std::cout << "\n\n> " << m_name <<" Outch !\n" << attackerName << " Attacked me ! Lost " << damage << " hp !" <<std::endl;
 }
 
 void Character::heal(int32_t damage) {
-	m_currentHp += damage;
+	m_currentHp = Utility::clamp(damage, 0, m_maxHp);
 }
 
 Weapon* Character::getWeapon() {
