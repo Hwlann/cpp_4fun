@@ -24,8 +24,6 @@ Character::Character(std::string name, CharacterClass characterClass) :
 			break;
 	}
 	m_currentHp = m_maxHp;
-	m_actionPoint = 2;
-	m_movementPoint = 1;
 	std::cout << std::endl;
 }
 
@@ -35,11 +33,6 @@ void Character::attackTarget(Character *target) {
 
 Character::~Character() {
 	if (m_currentWeapon != nullptr) delete m_currentWeapon;
-	/*
-	for (std::map<std::string, Weapon *>::iterator it = m_weaponList.begin(); it != m_weaponList.end(); ++it) {
-		delete it->second;
-	}
-	*/
 }
 
 bool Character::isAlive() {
@@ -78,20 +71,6 @@ void Character::setPosition(CharacterPosition *position) {
 
 Character::CharacterPosition* Character::getPosition() {
 	return m_position;
-}
-
-bool Character::moveToTile() {
-	if(m_movementPoint > 0) {
-		return true;
-	}
-	else return false;
-}
-
-void Character::myTurn() {
-	std::cout << m_name << " Turn !\n";
-	std::cout << "1 - Attack\n" << "2 - Drink Health Potion!\n" << "3 - Move\n";
-	std::cout << "Action : ";
-	std::cin >> m_turnChoise;
 }
 
 std::string Character::getName() {

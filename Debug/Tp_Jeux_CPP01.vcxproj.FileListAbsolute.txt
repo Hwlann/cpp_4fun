@@ -1,2 +1,4 @@
 C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\Debug\Tp_Jeux_CPP01.exe
 C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\Debug\Tp_Jeux_CPP01.pdb
+C:\Users\loict\Documents\B3\cpp_4fun\Debug\Tp_Jeux_CPP01.exe
+C:\Users\loict\Documents\B3\cpp_4fun\Debug\Tp_Jeux_CPP01.pdb

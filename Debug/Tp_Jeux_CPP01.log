@@ -1,15 +1,4 @@
-﻿  GameManager.cpp
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(5,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(9,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(46,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(51,17): warning C4018: '>' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(62,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(100,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(112,21): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameManager.cpp(133,20): warning C4018: '<' : incompatibilité signed/unsigned
-  GameMenu.cpp
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameMenu.cpp(22,20): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\GameMenu.cpp(31,14): warning C4018: '<' : incompatibilité signed/unsigned
+﻿  Character.cpp
   Tp_Jeux_CPP01.cpp
   Génération de code en cours...
-  Tp_Jeux_CPP01.vcxproj -> C:\Users\loict\OneDrive\Documents\B3\CPP\TP01\Tp_Jeux_CPP01\Debug\Tp_Jeux_CPP01.exe
+  Tp_Jeux_CPP01.vcxproj -> C:\Users\loict\Documents\B3\cpp_4fun\Debug\Tp_Jeux_CPP01.exe
