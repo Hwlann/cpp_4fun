@@ -5,11 +5,30 @@ GameMenu *GameMenu::m_gameMenu = nullptr;
 GameMenu::GameMenu() {
 	m_currIndex = 1;
 	m_numberOfPlayers = DEF_MIN_PLAYERS_COUNT;
-	drawMenu(DEF_MAIN_MENU);
+	m_gameDifficulty = 3;
+
+	myWonderfullMap.insert(std::pair<std::string, int*>("m_numberOfPlayers", &m_numberOfPlayers));
+	myWonderfullMap.insert(std::pair<std::string, int*>("m_gameDifficulty", &m_gameDifficulty));
+
+	loadingScreen();
 }
 
 GameMenu::~GameMenu() {
 	if(m_gameMenu != nullptr) delete m_gameMenu;
+}
+
+void GameMenu::loadingScreen() {
+	system("cls");
+
+	std::ifstream loading;
+	loading.open("ui/loading.ui", std::ios::in);
+	if (loading.is_open())
+		std::cout << loading.rdbuf() << std::endl;
+
+	for (int i = 100; i < 300; i += 10) {
+		Beep(i, 100);
+	}
+	drawMenu(DEF_MAIN_MENU);
 }
 
 GameMenu *GameMenu::getInstance() {
@@ -37,9 +56,7 @@ void GameMenu::drawMenu(int menuIndex) {
 	for (int i = 1; i < m_menus.at(menuIndex).size(); i++) {
 		std::cout << "\t\t\t";
 		(i == m_currIndex) ? std::cout << DEF_SELECT_CHAR << " " : std::cout << "  ";
-		if (menuIndex == DEF_HOW_MANY && i == 1)
-			std::cout << m_numberOfPlayers << " ";
-		std::cout << m_menus.at(menuIndex).at(i) << std::endl;
+		std::cout << Utility::pritnT(m_menus.at(menuIndex).at(i), myWonderfullMap) << std::endl;
 	}
 	title.close();
 	menu.close();
@@ -64,6 +81,7 @@ void GameMenu::selectAction(int menuIndex)
 		{
 			if (ascii_value == 75 && m_currIndex == 1)
 			{
+				Beep(1300 - 80 * m_numberOfPlayers, 80);
 				m_numberOfPlayers --;
 				Utility::clamp(&m_numberOfPlayers, DEF_MIN_PLAYERS_COUNT, DEF_MAX_PLAYERS_COUNT);
 				drawMenu(menuIndex);
@@ -71,8 +89,28 @@ void GameMenu::selectAction(int menuIndex)
 			}
 			if (ascii_value == 77 && m_currIndex == 1)
 			{
+				Beep(1300 - 80 * m_numberOfPlayers, 80);
 				m_numberOfPlayers ++;
 				Utility::clamp(&m_numberOfPlayers, DEF_MIN_PLAYERS_COUNT, DEF_MAX_PLAYERS_COUNT);
+				drawMenu(menuIndex);
+				break;
+			}
+		}
+		if (menuIndex == DEF_OPTIONS)
+		{
+			if (ascii_value == 75 && m_currIndex == 1)
+			{
+				Beep(433 + 80 * m_gameDifficulty, 80);
+				m_gameDifficulty--;
+				Utility::clamp(&m_gameDifficulty, DEF_MIN_DIFFICULTY, DEF_MAX_DIFFICULTY);
+				drawMenu(menuIndex);
+				break;
+			}
+			if (ascii_value == 77 && m_currIndex == 1)
+			{
+				Beep(433 + 80 * m_gameDifficulty, 80);
+				m_gameDifficulty++;
+				Utility::clamp(&m_gameDifficulty, DEF_MIN_DIFFICULTY, DEF_MAX_DIFFICULTY);
 				drawMenu(menuIndex);
 				break;
 			}
@@ -83,6 +121,8 @@ void GameMenu::selectAction(int menuIndex)
 			if (m_currIndex > maxIndex) {
 				m_currIndex = 1;
 			}
+
+			Beep(523, 80);
 			drawMenu(menuIndex);
 			break;
 		}
@@ -92,10 +132,15 @@ void GameMenu::selectAction(int menuIndex)
 			if (m_currIndex < 1) {
 				m_currIndex = maxIndex;
 			}
+
+			Beep(523, 80);
 			drawMenu(menuIndex);
 			break;
 		}
 		else if (ascii_value == 13) {
+
+			Beep(523, 40);
+			Beep(750, 120);
 			menuSelected(menuIndex, m_currIndex);
 			break;
 		}
@@ -168,4 +213,5 @@ void GameMenu::menuSelected(int menuIndex, int index) {
 void GameMenu::applyOptions() 
 {
 	std::fstream optionsFile;
+	optionsFile.open("game.settings");
 }
