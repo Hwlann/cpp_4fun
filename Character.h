@@ -9,6 +9,7 @@
 #include <vector>
 
 #include "Weapon.h"
+#include "Armour.h"
 #include "Utility.h"
 
 // DEFINES
@@ -38,17 +39,21 @@ class Character
 
 		// GETTER
 		std::string getName();
-		CharacterPosition* getPosition();
+		CharacterPosition *getPosition();
 		Weapon* getWeapon();
 
 		// SETTERS
 		void setPosition(CharacterPosition* position);
+		void setLeftHandWeapon(Weapon* weapon);
+		void setRightHandWeapon(Weapon* weapon);
+		void setArmour(Armour* armour);
 
 		// METHODS
 		void receiveDamage(int32_t damage, std::string attackerName);
 		void heal(int32_t damage);
 		bool isAlive();
 		void attackTarget(Character *target);
+		void move(CharacterPosition* position);
 		//void swapWeapon(std::string weaponName);
 
 	protected:
@@ -62,7 +67,9 @@ class Character
 		std::vector<std::string> m_classNames = { "Warrior", "Wizard", "Ranger" };
 
 		// OBJECTS
-		Weapon* m_currentWeapon = nullptr;
+		Weapon *m_leftHand = nullptr;
+	    Weapon *m_rightHand = nullptr;
+		Armour *m_armour = nullptr;
 		CharacterPosition* m_position = nullptr;
 		CharacterClass m_characterClass;
 };

@@ -9,17 +9,17 @@ Character::Character(std::string name, CharacterClass characterClass) :
 		case CharacterClass::WARRIOR:
 			m_maxHp = WARRIOR_MAX_HP;
 			std::cout << "A Powerfull " << m_classNames.at(0) << std::endl;
-			m_currentWeapon = new Weapon("BFAxe", 110, Weapon::WeaponType::AXE, 100);
+			m_leftHand = new Weapon("BFAxe", 110, Weapon::WeaponType::AXE, 100);
 			break;
 		case CharacterClass::WIZARD:
 			m_maxHp = WIZARD_MAX_HP;
 			std::cout << "A Powerfull " << m_classNames.at(1) << std::endl;
-			m_currentWeapon = new Weapon("BFStaff", 90, Weapon::WeaponType::STAFF, 60);
+			m_leftHand = new Weapon("BFStaff", 90, Weapon::WeaponType::STAFF, 60);
 			break;
 		case CharacterClass::RANGER:
 			m_maxHp = RANGER_MAX_HP;
 			std::cout << "A Powerfull " << m_classNames.at(2) << std::endl;
-			m_currentWeapon =  new Weapon("BFBow", 70, Weapon::WeaponType::BOW, 80);
+			m_leftHand =  new Weapon("BFBow", 70, Weapon::WeaponType::BOW, 80);
 			break;
 	}
 	m_currentHp = m_maxHp;
@@ -27,11 +27,13 @@ Character::Character(std::string name, CharacterClass characterClass) :
 }
 
 void Character::attackTarget(Character *target) {
-	target->receiveDamage(m_currentWeapon->getBaseDamage(), m_name);
+	target->receiveDamage(m_leftHand->getBaseDamage(), m_name);
 }
 
 Character::~Character() {
-	if (m_currentWeapon != nullptr) delete m_currentWeapon;
+	if (m_leftHand != nullptr) delete m_leftHand;
+	if (m_rightHand != nullptr) delete m_rightHand;
+	if (m_armour != nullptr) delete m_armour;
 }
 
 bool Character::isAlive() {
@@ -53,7 +55,7 @@ void Character::heal(int32_t damage) {
 }
 
 Weapon* Character::getWeapon() {
-	return m_currentWeapon;
+	return m_leftHand;
 }
 
 /*
@@ -66,6 +68,18 @@ void Character::swapWeapon(std::string weaponName) {
 
 void Character::setPosition(CharacterPosition *position) {
 	m_position = position;
+}
+
+void Character::setLeftHandWeapon(Weapon* weapon)
+{
+}
+
+void Character::setRightHandWeapon(Weapon* weapon)
+{
+}
+
+void Character::setArmour(Armour* armour)
+{
 }
 
 Character::CharacterPosition* Character::getPosition() {
