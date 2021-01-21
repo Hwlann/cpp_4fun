@@ -6,6 +6,10 @@
 class AiCharacter :
     public Character
 {
+    public:
+        void moveToClosestLocationFromTarget(Character* target);
+        void moveToSafeLocation();
+        void moveToClosestLocationFromTargetWithSafestPath();
 };
 
 #endif

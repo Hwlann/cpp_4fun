@@ -53,7 +53,7 @@ class Character
 		void heal(int32_t damage);
 		bool isAlive();
 		void attackTarget(Character *target);
-		void move(CharacterPosition* position);
+		void moveAlongPath(std::vector<std::pair<int, int>> path);
 		//void swapWeapon(std::string weaponName);
 
 	protected:

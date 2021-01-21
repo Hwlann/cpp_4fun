@@ -30,6 +30,11 @@ void Character::attackTarget(Character *target) {
 	target->receiveDamage(m_leftHand->getBaseDamage(), m_name);
 }
 
+void Character::moveAlongPath(std::vector<std::pair<int, int>> path)
+{
+
+}
+
 Character::~Character() {
 	if (m_leftHand != nullptr) delete m_leftHand;
 	if (m_rightHand != nullptr) delete m_rightHand;

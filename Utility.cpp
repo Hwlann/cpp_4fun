@@ -120,3 +120,57 @@ std::string Utility::pritnT(std::string str, std::map<std::string, int*> myMap)
     }
     return ret;
 }
+
+std::vector<std::pair<int, int>> Utility::getPath(std::pair<int, int> origin, std::pair<int, int> destination)
+{
+    std::vector<std::pair<int, int>> path;
+    std::pair<int, int> pointer = origin;
+    std::pair<int, int> tileToCheck;
+    float min_distance = 100.0f;
+    float temp = 100.0f;
+    while (pointer != destination) {
+        tileToCheck = pointer;
+        // X + 1 CHECK
+        tileToCheck.first += 1;
+        if (tileToCheck.first >= 0) {
+            temp = distance(tileToCheck, destination);
+            if (min_distance > temp) {
+                min_distance = temp;
+                pointer = tileToCheck;
+            }
+        }
+        // X - 1 CHECK
+        tileToCheck.first -= 1;
+        if (tileToCheck.first >= 0) {
+            temp = distance(tileToCheck, destination);
+            if (min_distance > temp) {
+                min_distance = temp;
+                pointer = tileToCheck;
+            }
+        }
+        // Y + 1 CHECK
+        tileToCheck.second += 1;
+        if (tileToCheck.second >= 0) {
+            temp = distance(tileToCheck, destination);
+            if (min_distance > temp) {
+                min_distance = temp;
+                pointer = tileToCheck;
+            }
+        }
+        // Y - 1 CHECK
+        tileToCheck.second -= 1;
+        if (tileToCheck.second >= 0) {
+            temp = distance(tileToCheck, destination);
+            if (min_distance > temp) {
+                min_distance = temp;
+                pointer = tileToCheck;
+            }
+        }
+        path.push_back(pointer);
+    }
+    return path;
+}
+
+float Utility::distance(std::pair<int, int> origin, std::pair<int, int> destination) {
+    return sqrt(pow(destination.first - origin.first, 2) + pow(destination.second - origin.second, 2));
+}

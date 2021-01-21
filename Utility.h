@@ -8,13 +8,16 @@
 #include <string>
 #include <vector>
 #include <map>
-#include<algorithm>
+#include <algorithm>
+#include <math.h>
 
 class Utility
 {
 	public:
 		static void clamp(int* valueAddr, int min, int max);
+		static float distance(std::pair<int, int> origin, std::pair<int, int> destination);
 		static std::string pritnT(std::string str, std::map<std::string, int*> myMap);
+		static std::vector<std::pair<int, int>> getPath(std::pair<int, int> origin, std::pair<int, int> destination);
 };
 
 #endif // !* DEF_UTILITY
