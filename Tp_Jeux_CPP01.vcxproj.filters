@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Tp_Jeux_CPP01.cpp" />
+    <ClCompile Include="AiCharacter.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCharacter.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMenu.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Other</Filter>
+    </ClCompile>
+    <ClCompile Include="Armour.cpp">
+      <Filter>Equipement</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Equipement</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AiCharacter.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCharacter.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMenu.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Armour.h">
+      <Filter>Equipement</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Equipement</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{255fc859-e8e4-498a-9f4c-40a341b5b3aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{2a684d56-108f-4d9d-9edb-6cd8bf163dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Other">
+      <UniqueIdentifier>{008753f1-6d4b-48a3-8beb-5a09888fba15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Equipement">
+      <UniqueIdentifier>{651e1108-22ae-405e-a360-8b31f55ea122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skills">
+      <UniqueIdentifier>{3fb5eb58-7e95-4059-8cb8-e161988623e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
