@@ -64,7 +64,7 @@ void GameMenu::drawMenu(int menuIndex) {
 }
 
 void GameMenu::startNewGame(int nbrOfPlayers) {
-	GameManager::getInstance()->initNewGame(m_numberOfPlayers);
+	//GameManager::getInstance()->initNewGame(m_numberOfPlayers);
 
 }
 
@@ -186,7 +186,7 @@ void GameMenu::menuSelected(int menuIndex, int index) {
 			switch (m_index)
 			{
 			case 1:
-				GameManager::getInstance()->initNewGame(m_numberOfPlayers);
+				//GameManager::getInstance()->initNewGame(m_numberOfPlayers);
 				break;
 			case 2:
 				drawMenu(DEF_MAIN_MENU);

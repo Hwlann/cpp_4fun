@@ -1,6 +1,6 @@
 #pragma once
-#ifndef DEF_PERSONNAGE
-#define DEF_PERSONNAGE
+#ifndef DEF_CHARACTER
+#define DEF_CHARACTER
 
 #include <string>
 #include <inttypes.h>
@@ -21,30 +21,14 @@ constexpr int32_t RANGER_MAX_HP = 95;
 class Character : public GameObject
 {
 	public:
-		// STRUCTURES
-		struct CharacterPosition {
-			int32_t x;
-			int32_t y;
-		};
-
-		// ENUMS
-		enum class CharacterClass {
-			WARRIOR,
-			WIZARD,
-			RANGER
-		};
 
 		// CONSTRUCTOR & DESTRUCTOR
-		Character(std::string name = "Anonyme", CharacterClass characterClass = CharacterClass::WARRIOR);
+		Character();
 		virtual ~Character();
 
 		// GETTER
-		std::string getName();
-		CharacterPosition *getPosition();
-		Weapon* getWeapon();
 
 		// SETTERS
-		void setPosition(CharacterPosition* position);
 		void setLeftHandWeapon(Weapon* weapon);
 		void setRightHandWeapon(Weapon* weapon);
 		void setArmour(Armour* armour);
@@ -55,7 +39,6 @@ class Character : public GameObject
 		bool isAlive();
 		void attackTarget(Character *target);
 		void moveAlongPath(std::vector<std::pair<int, int>> path);
-		//void swapWeapon(std::string weaponName);
 
 	protected:
 		// VARIABLES
@@ -64,15 +47,10 @@ class Character : public GameObject
 		int32_t m_actionPoint = 0;
 		std::string m_name;
 
-		// LISTS
-		std::vector<std::string> m_classNames = { "Warrior", "Wizard", "Ranger" };
-
 		// OBJECTS
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;
 		Armour *m_armour = nullptr;
-		CharacterPosition* m_position = nullptr;
-		CharacterClass m_characterClass;
 };
 #endif // DEF_PERSONNAGE
 

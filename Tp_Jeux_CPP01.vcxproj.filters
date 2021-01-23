@@ -38,6 +38,18 @@
     <ClCompile Include="Skill.cpp">
       <Filter>Skills</Filter>
     </ClCompile>
+    <ClCompile Include="Curve.cpp">
+      <Filter>Miscellanous</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipment.cpp">
+      <Filter>Equipement</Filter>
+    </ClCompile>
+    <ClCompile Include="Class.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AiCharacter.h">
@@ -76,6 +88,18 @@
     <ClInclude Include="Skill.h">
       <Filter>Skills</Filter>
     </ClInclude>
+    <ClInclude Include="Curve.h">
+      <Filter>Miscellanous</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>Equipement</Filter>
+    </ClInclude>
+    <ClInclude Include="Class.h">
+      <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Warrior.h">
+      <Filter>Class</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -95,6 +119,15 @@
     </Filter>
     <Filter Include="Miscellanous">
       <UniqueIdentifier>{008753f1-6d4b-48a3-8beb-5a09888fba15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Equipement\Armour">
+      <UniqueIdentifier>{10a05a81-0099-4258-8484-6fec62a88d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Equipement\Weapon">
+      <UniqueIdentifier>{2308f06f-7454-4b27-a340-49ca4ac2d2f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{7836f34c-0896-41b7-a6db-0b4c5db47d4d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
