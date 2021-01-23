@@ -7,6 +7,8 @@ class AiCharacter :
     public Character
 {
     public:
+        AiCharacter();
+        virtual ~AiCharacter();
         void moveToClosestLocationFromTarget(Character* target);
         void moveToSafeLocation();
         void moveToClosestLocationFromTargetWithSafestPath();

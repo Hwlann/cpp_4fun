@@ -1,5 +1,13 @@
 #include "AiCharacter.h"
 
+AiCharacter::AiCharacter()
+{
+}
+
+AiCharacter::~AiCharacter()
+{
+}
+
 void AiCharacter::moveToClosestLocationFromTarget(Character* target)
 {
 }

@@ -36,7 +36,7 @@ class Character : public GameObject
 
 		// CONSTRUCTOR & DESTRUCTOR
 		Character(std::string name = "Anonyme", CharacterClass characterClass = CharacterClass::WARRIOR);
-		~Character();
+		virtual ~Character();
 
 		// GETTER
 		std::string getName();
