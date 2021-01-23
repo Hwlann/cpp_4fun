@@ -84,8 +84,8 @@ class GameMenu
 		std::vector<std::vector<std::string>> m_menus = { 
 															{ "mainmenu", "New Game", "Options", "Exit" },
 															{ "sure", "Yes", "Back" },
-															{ "selectplayers", "{{ $m_numberOfPlayers }} players", "Back" },
-															{ "options", "Difficuly : {{ $m_gameDifficulty }}", "Apply", "Back" }
+															{ "selectplayers", "<    {{ $m_numberOfPlayers }} players     >", "Back" },
+															{ "options", "<    Difficuly : {{ $m_gameDifficulty }}     >", "Apply", "Back" }
 														};
 		GameMenu();
 };
