@@ -8,6 +8,11 @@ AiCharacter::~AiCharacter()
 {
 }
 
+void AiCharacter::applyDifficulty()
+{
+
+}
+
 void AiCharacter::moveToClosestLocationFromTarget(Character* target)
 {
 }

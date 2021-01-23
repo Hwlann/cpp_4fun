@@ -151,9 +151,12 @@
     <ClCompile Include="GameMenu.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="OneHand.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Tp_Jeux_CPP01.cpp" />
+    <ClCompile Include="TwoHands.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Weapon.cpp" />
@@ -170,8 +173,11 @@
     <ClInclude Include="GameMenu.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="OneHand.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Skill.h" />
+    <ClInclude Include="Sword.h" />
+    <ClInclude Include="TwoHands.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Warrior.h" />
     <ClInclude Include="Weapon.h" />

@@ -2,6 +2,8 @@
 #ifndef DEF_CHARACTER
 #define DEF_CHARACTER
 
+#include "GameObject.h"
+
 #include <string>
 #include <inttypes.h>
 #include <iostream>
@@ -10,14 +12,10 @@
 
 #include "Weapon.h"
 #include "Armour.h"
+#include "Class.h"
 #include "Utility.h"
-#include "GameObject.h"
 
 // DEFINES
-constexpr int32_t WARRIOR_MAX_HP = 150;
-constexpr int32_t WIZARD_MAX_HP = 70;
-constexpr int32_t RANGER_MAX_HP = 95;
-
 class Character : public GameObject
 {
 	public:
@@ -31,26 +29,30 @@ class Character : public GameObject
 		// SETTERS
 		void setLeftHandWeapon(Weapon* weapon);
 		void setRightHandWeapon(Weapon* weapon);
+		void setDualHandWeapon(Weapon *weapon);
 		void setArmour(Armour* armour);
+		void setClass(Class* characterClass);
 
 		// METHODS
-		void receiveDamage(int32_t damage, std::string attackerName);
-		void heal(int32_t damage);
+		// HEATLH 
+		void receiveDamage(int32_t damage);
+		void heal(int32_t healAmount);
 		bool isAlive();
-		void attackTarget(Character *target);
+
+		// MOVEMENT
 		void moveAlongPath(std::vector<std::pair<int, int>> path);
 
 	protected:
 		// VARIABLES
-		int32_t m_maxHp = 0;
-		int32_t m_currentHp = 0;
-		int32_t m_actionPoint = 0;
-		std::string m_name;
+		int32_t m_maxHp = 0, m_currentHp = 0;
+		int32_t m_actionPoint = 0, m_maxActionPoint = 0 ;
+		int32_t m_movementPoint = 0, m_maxMovementPoint = 0;
 
 		// OBJECTS
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;
 		Armour *m_armour = nullptr;
+		Class *m_class = nullptr;
 };
 #endif // DEF_PERSONNAGE
 

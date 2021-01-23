@@ -50,6 +50,15 @@
     <ClCompile Include="Warrior.cpp">
       <Filter>Class</Filter>
     </ClCompile>
+    <ClCompile Include="OneHand.cpp">
+      <Filter>Equipement\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>Equipement\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoHands.cpp">
+      <Filter>Equipement\Weapon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AiCharacter.h">
@@ -99,6 +108,15 @@
     </ClInclude>
     <ClInclude Include="Warrior.h">
       <Filter>Class</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoHands.h">
+      <Filter>Equipement\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="OneHand.h">
+      <Filter>Equipement\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>Equipement\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
