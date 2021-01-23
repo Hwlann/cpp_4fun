@@ -17,9 +17,6 @@
     <ClCompile Include="GameMenu.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Utility.cpp">
-      <Filter>Other</Filter>
-    </ClCompile>
     <ClCompile Include="Armour.cpp">
       <Filter>Equipement</Filter>
     </ClCompile>
@@ -27,6 +24,18 @@
       <Filter>Equipement</Filter>
     </ClCompile>
     <ClCompile Include="Effects.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Superclass</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Miscellanous</Filter>
+    </ClCompile>
+    <ClCompile Include="Skill.cpp">
       <Filter>Skills</Filter>
     </ClCompile>
   </ItemGroup>
@@ -46,9 +55,6 @@
     <ClInclude Include="GameMenu.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>Other</Filter>
-    </ClInclude>
     <ClInclude Include="Armour.h">
       <Filter>Equipement</Filter>
     </ClInclude>
@@ -56,6 +62,18 @@
       <Filter>Equipement</Filter>
     </ClInclude>
     <ClInclude Include="Effects.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Superclass</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Miscellanous</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
       <Filter>Skills</Filter>
     </ClInclude>
   </ItemGroup>
@@ -66,14 +84,17 @@
     <Filter Include="Character">
       <UniqueIdentifier>{2a684d56-108f-4d9d-9edb-6cd8bf163dcb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Other">
-      <UniqueIdentifier>{008753f1-6d4b-48a3-8beb-5a09888fba15}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Equipement">
       <UniqueIdentifier>{651e1108-22ae-405e-a360-8b31f55ea122}</UniqueIdentifier>
     </Filter>
     <Filter Include="Skills">
       <UniqueIdentifier>{3fb5eb58-7e95-4059-8cb8-e161988623e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Superclass">
+      <UniqueIdentifier>{02dbcfb6-53cf-4551-8972-912a65865630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Miscellanous">
+      <UniqueIdentifier>{008753f1-6d4b-48a3-8beb-5a09888fba15}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

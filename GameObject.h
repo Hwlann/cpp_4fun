@@ -4,11 +4,12 @@
 #include <string>
 class GameObject
 {
-public:
-	std::string getName();
-protected:
-	std::string m_name;
-
+	public:
+		GameObject(std::string name = "N/C");
+		virtual ~GameObject();
+		std::string getName();
+	protected:
+		std::string m_name;
 };
 #endif
 

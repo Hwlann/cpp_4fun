@@ -11,13 +11,14 @@
 #include "Weapon.h"
 #include "Armour.h"
 #include "Utility.h"
+#include "GameObject.h"
 
 // DEFINES
 constexpr int32_t WARRIOR_MAX_HP = 150;
 constexpr int32_t WIZARD_MAX_HP = 70;
 constexpr int32_t RANGER_MAX_HP = 95;
 
-class Character
+class Character : public GameObject
 {
 	public:
 		// STRUCTURES

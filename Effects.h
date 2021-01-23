@@ -1,7 +1,8 @@
 #pragma once
 #ifndef DEF_EFFECTS
 #define DEF_EFFECTS
-class Effects
+#include "GameObject.h"
+class Effects : public GameObject
 {
 
 

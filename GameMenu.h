@@ -43,7 +43,8 @@
 #define C5 523 // DO
 
 #include "GameManager.h"
-#include "Utility.h"
+#include "GameObject.h"
+#include "Utility"
 
 #include <iostream>
 #include <fstream>
@@ -57,7 +58,7 @@ enum class GameDifficulty {
 	HARD
 };
 
-class GameMenu
+class GameMenu : public GameObject
 {
 	public:
 		~GameMenu();

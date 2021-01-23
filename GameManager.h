@@ -3,9 +3,10 @@
 #define DEF_GAMEMANAGER
 
 #include "Character.h"
+#include "GameObject.h"
 #include <time.h>
 
-class GameManager
+class GameManager : public GameObject
 {
 	public:
 		static GameManager *getInstance();
