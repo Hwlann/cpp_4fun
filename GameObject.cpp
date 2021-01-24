@@ -15,3 +15,8 @@ std::string GameObject::getName()
 {
     return m_name;
 }
+
+void GameObject::setName(std::string name)
+{
+	m_name = name;
+}

@@ -8,6 +8,8 @@ class GameObject
 		GameObject(std::string name = "N/C");
 		virtual ~GameObject();
 		std::string getName();
+		void setName(std::string name);
+
 	protected:
 		std::string m_name;
 };

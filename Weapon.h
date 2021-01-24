@@ -2,6 +2,7 @@
 #ifndef DEF_WEAPON
 #define DEF_WEAPON
 #include "Equipment.h"
+#include <vector>
 #include <string>
 
 class Weapon : public Equipment

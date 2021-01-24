@@ -24,6 +24,10 @@ class Character : public GameObject
 		Character();
 		virtual ~Character();
 
+		// EFFECTS
+		void addEffectToCharacter(Effect *effect);
+		void applyEffect(Effect* effect);
+
 		// GETTER
 
 		// SETTERS
@@ -53,6 +57,8 @@ class Character : public GameObject
 	    Weapon *m_rightHand = nullptr;
 		Armour *m_armour = nullptr;
 		Class *m_class = nullptr;
+		std::vector<Effect*> m_effectList;
+		std::map<std::string, int> m_effectRemainingTurns;
 };
 #endif // DEF_PERSONNAGE
 
