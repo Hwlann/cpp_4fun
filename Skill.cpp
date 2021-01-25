@@ -18,9 +18,24 @@ void Skill::addEffect(Effect::EffectCategory category, Effect* effect)
 			if(!m_primaryEffect) m_primaryEffect = effect;
 			break;
 		case Effect::EffectCategory::SECONDARY:
-			if (!m_secondaryEffet) m_secondaryEffet = effect;
+			if (!m_secondaryEffect) m_secondaryEffect = effect;
 			break;
 	}
+}
+
+Effect* Skill::getPrimaryEffect()
+{
+	return m_primaryEffect;
+}
+
+Effect* Skill::getSecondaryEffect()
+{
+	return m_secondaryEffect;
+}
+
+Effect::SkillType* Skill::skillType()
+{
+	return m_skillType;
 }
 
 int Skill::getDamage()

@@ -26,14 +26,17 @@ bool Character::isAlive() {
 	}
 }
 
-void Character::receiveDamage(int32_t damage)
+void Character::applySkill(Skill *skill) {
+
+}
+
+void Character::takeDamage(int32_t damageAmount)
 {
 
 }
 
-void Character::heal(int32_t healAmout) {
-	m_currentHp += healAmout;
-	Utility::clamp(&m_currentHp, 0, m_maxHp);
+void Character::heal(int32_t healAmount) {
+
 }
 
 void Character::setLeftHandWeapon(Weapon* weapon)

@@ -39,7 +39,8 @@ class Character : public GameObject
 
 		// METHODS
 		// HEATLH 
-		void receiveDamage(int32_t damage);
+		void applySkill(Skill* skill);
+		void takeDamage(int32_t damageAmount);
 		void heal(int32_t healAmount);
 		bool isAlive();
 
@@ -59,6 +60,7 @@ class Character : public GameObject
 		int32_t m_maxHp = 0, m_currentHp = 0;
 		int32_t m_actionPoint = 0, m_maxActionPoint = 0 ;
 		int32_t m_movementPoint = 0, m_maxMovementPoint = 0;
+		float m_dodgeRate = 0.0f, precision = 0.0f;
 
 		// OBJECTS
 		Weapon *m_leftHand = nullptr;

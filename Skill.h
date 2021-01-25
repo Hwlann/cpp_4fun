@@ -13,6 +13,10 @@ class Skill : public GameObject
 
 		void addEffect(Effect::EffectCategory, Effect* effect);
 
+		Effect *getPrimaryEffect();
+		Effect *getSecondaryEffect();
+		Effect::SkillType* skillType();
+
 		// GETTER
 		int getDamage();
 		int getRange();
@@ -23,8 +27,9 @@ class Skill : public GameObject
 		int m_range = 0;
 		int m_manaCost = 0;
 
+		Effect::SkillType* m_skillType = nullptr;
 		Effect *m_primaryEffect = nullptr;
-		Effect *m_secondaryEffet = nullptr;
+		Effect *m_secondaryEffect = nullptr;
 };
 
 
