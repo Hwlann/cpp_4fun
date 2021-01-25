@@ -1,0 +1,51 @@
+   ___ _                          _                                  _   _             
+  / __\ |__   __ _ _ __ __ _  ___| |_ ___ _ __    ___ _ __ ___  __ _| |_(_) ___  _ __  
+ / /  | '_ \ / _` | '__/ _` |/ __| __/ _ \ '__|  / __| '__/ _ \/ _` | __| |/ _ \| '_ \ 
+/ /___| | | | (_| | | | (_| | (__| ||  __/ |    | (__| | |  __/ (_| | |_| | (_) | | | |
+\____/|_| |_|\__,_|_|  \__,_|\___|\__\___|_|     \___|_|  \___|\__,_|\__|_|\___/|_| |_|
+
+<     Select your face : {{ faceID }}    >                                                                                       
+                                                                                
+                                  .7WWXXSS7r772227:                             
+                                 7X2i:.:::::.:.::7777r                          
+                               ;27:..::::::::::::.7;.;22r                       
+                             .77;::::::::::::::::;:::7:r:2.                     
+                            7227:::::::::::::;r72:.2X0S.72X7                    
+                          7XBBXr.::::::::;::::;7..SM.rW.2X;77                   
+                         r:7B222r:::;;rrr::.:77:.XMr.:W:7X:7:7                  
+                           B2222SXSS277r;r2XZW;.7Mr..;Z:7X.2:;;                 
+                          0S2222S227222XMMXr22::X;:7;rS.8.:Wr:r                 
+                         MXS222SS22XZX227;:SM2.777707S777 8M77rr                
+                        MM0X220S2SX2S2r::727r7;27. 70Si7::70Xr07;               
+                       BW7MSSW7;:X2727rrr777XXrr   7M7;;:  WX7..X7              
+                     .Mr .BaWr .7272777r22i72XBBBX:XXr7;:28XZ2r  27             
+                     ;   XB8M: rZa2727r22 ;X .MBB2ZW227MBBZSZBS   ..            
+                        :77XB0 iaZXZ227S: :2: 72.:MXr ..Z7XSX2W2                
+                         :  ZBW2708X7M22....:.. :2:    ..2080  0X               
+                             aBMMWX77ZW7 ....   .     .  XBMX   r:              
+                              MM2XZ72.2S ....... . .:.:.:BXB;                   
+                              XM.r02W: 7  ..... .  .rr::B; B                    
+                     .:.   ;7iW2:;XXM2.   ... :r...:: :7  :Z                    
+                 :2ZMWW8W28X.7M2;.2Z7r77.   . :27r72:;:   7.                    
+               :BMX272722aZ077:r727M7:;727.     :r.:r                           
+               M82XXXSS22777SZX2r:;2W77ir72r:     ;i                            
+             .:BXW00Z0Z0ZX27722XWM2:;:r222227XBM7222r                           
+           XMM82222SZZ0ZZZ82722722BBWZ7.  :2X.BWr7;.7                           
+          ZW22227777722Z0ZXWS722277BBBBBM2  S 87r r22                           
+      .7Z0X222222222S2272X0XZ2722772BSMBBM  7.Z2  BM2r27r.                      
+     0MMZX2S2S2XXZZ0XZXXS2S0Z0272227Z7:2MB: 7 2B ;BX2777227:                    
+    BMW0ZXZZX222XaXXXXZX0ZXX0Z0222222Br.:2X 2  2 ZB22X777727r                   
+   2B7.   .;20X222SXZ0XZXZXXXZ0872227XMr;:r70.. :BBMXa7r7777X                   
+  r2.  ....  .7S0X272X0ZZXZXXXZ0Z72227ZBS77;727 BMBBa;rr7r77B.                  
+ r2 .:.:.:.:.. .;SM0272XZ0ZZXZZZ8X2S2S2W82X2rr7BMBB2:;irir;7Z2r.                
+7;..:.:.:::::.:...2MZSS72a800ZZZ0Wa2S2S2MXSZX7;;ZBX;72277r7aar777:.             
+r .:.:::::::::::...2W2X8222X8WZ0X8WS2aSS2B77Z0X2;2XXXaMWXaXa77727227            
+: :::.::::::::::::.:Z02ZMZX22X800XM0SSXSSZZ::;;r7:::;ZBBB2a27r77727a;           
+:.::::::::::::::::..7MXSZMWZ2220WZ0MZSaXaSWBMW0W0WMBMB02082XX2777227S           
+:.:::::::::::::::::.rZM2SXMW8SSSW8Z8WXaXXXSMBWBMBMMZ2;..78Z2XX772727S:          
+:.:::::::::::::;:;::7SBXSXXWWWXSaW08WWaXXXaXW. :........:2WX2Z277772S7          
+:.::::::::::;::::::.77BWXXXXWMWXaXMZWWWXXXZXWW. ::::::::.;X8SXZ77227M7          
+:.:::::::::;:;;;:;::r28BaXXXXWMWXaWW0WWWXZXZXBM.:;:;:;;;:;20aXZXXZZZB.          
+; ..............:.:..r7MMXXXX2ZW8S00X00W0SXaXZB..:::::::..72X2XaaS2MB           
+
+// En fonction de la classe évidemment
