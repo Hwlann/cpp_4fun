@@ -11,6 +11,8 @@ class GameManager : public GameObject
 		static GameManager *getInstance();
 		~GameManager();
 
+		void initGame();
+
 	private:
 		static GameManager *m_gameManager;
 		GameManager();
