@@ -2,10 +2,12 @@
 
 
 
-Effect::Effect(EffectType effectType, EffectTarget effectTarget, int amount, int turns) :
+Effect::Effect(EffectType effectType, EffectTarget effectTarget, SkillType bonusDamageStat, int amount, int turns, bool applyEachTurn) :
 	m_effectType(effectType),
 	m_effectTarget(effectTarget),
-	m_amount(amount), m_turns(turns)
+	m_bonusDamageStat(bonusDamageStat),
+	m_amount(amount), m_turns(turns),
+	m_applyEachTurn(applyEachTurn)
 {
 
 }
@@ -22,6 +24,11 @@ int Effect::getAmount()
 int Effect::getNbTurns()
 {
 	return m_turns;
+}
+
+bool Effect::getApplyEachTurn()
+{
+	return m_applyEachTurn;
 }
 
 Effect::EffectType* Effect::getEffectType()

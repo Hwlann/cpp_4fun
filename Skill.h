@@ -7,6 +7,7 @@
 class Skill : public GameObject
 {
 	public :
+
 		Skill(int damage = 0 , int range = 0);
 		virtual ~Skill();
 

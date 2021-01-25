@@ -11,12 +11,16 @@ class Armour
 		int m_movementPenalty;
 
 	public:
-		enum class ArmorTier { CLOTH, LEATHER, CHAINMAIL, PLATE };
+		enum class ArmorType { CLOTH, LEATHER, CHAINMAIL, PLATE };
 		int getArmour();
 		int getMagicalResistance();
 		int getMovementPenalty();
+
 		void reduceArmour(float percent);
-		void reduceMagicialResistace(float percent);
+		void reduceMagicilResistance(float percent);
+
+		void buffArmour(float percent);
+		void buffMagicalResistance(float percent);
 };
 #endif // !DEF_ARMOUR
 

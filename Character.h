@@ -26,7 +26,7 @@ class Character : public GameObject
 
 		// EFFECTS
 		void addEffectToCharacter(Effect *effect);
-		void applyEffect(Effect* effect);
+		void applyEffects();
 
 		// GETTER
 
@@ -45,6 +45,14 @@ class Character : public GameObject
 
 		// MOVEMENT
 		void moveAlongPath(std::vector<std::pair<int, int>> path);
+
+		// MULTIPLIERS
+		float m_armorMulti = 1.0f;
+		float m_magicalResistanceMulti = 1.0f;
+		float m_damageMulti = 1.0f;
+		float m_healthMulti = 1.0f;
+		float m_manaMulti = 1.0f;
+		float m_movementMulti = 1.0f;
 
 	protected:
 		// VARIABLES

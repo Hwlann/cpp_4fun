@@ -16,7 +16,17 @@ void Armour::reduceArmour(float percent) {
 	m_armour -= m_maxArmor * percent;
 }
 
-void Armour::reduceMagicialResistace(float percent) {
+void Armour::reduceMagicilResistance(float percent) {
 	m_magicalResistance -= m_maxMagicialResistance * percent;
+}
+
+void Armour::buffArmour(float percent)
+{
+	m_armour += m_maxArmor * percent;
+}
+
+void Armour::buffMagicalResistance(float percent)
+{
+	m_magicalResistance += m_maxMagicialResistance * percent;
 }
 

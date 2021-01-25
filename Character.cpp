@@ -28,7 +28,7 @@ bool Character::isAlive() {
 
 void Character::receiveDamage(int32_t damage)
 {
-	
+
 }
 
 void Character::heal(int32_t healAmout) {
@@ -64,7 +64,7 @@ void Character::setClass(Class* characterClass)
 
 void Character::addEffectToCharacter(Effect* effect)
 {
-	bool alreadyExist= false;
+	bool alreadyExist = false;
 	for (int i = 0; i < m_effectList.size(); i++) {
 		if (m_effectList.at(i)->getName() == effect->getName()) {
 			alreadyExist = true;
@@ -77,7 +77,41 @@ void Character::addEffectToCharacter(Effect* effect)
 	}
 }
 
-void Character::applyEffect(Effect* effect)
+void Character::applyEffects()
 {
-
+	bool isPositive = false;
+	// ITERATE OVER ALL EFFETCS ON CHAR
+	for (int i = 0; i < m_effectList.size(); i++) {
+		if (m_effectRemainingTurns.at(m_effectList.at(i)->getName()) > 0){
+			// FILTER BUFF & DEBUFF
+			if (*(m_effectList.at(i)->getEffectType()) == Effect::EffectType::BUFF) isPositive = true;				
+			switch (*(m_effectList.at(i)->getEffectTarget())) {
+				case Effect::EffectTarget::ARMOR :
+					isPositive == true ? m_armorMulti += m_effectList.at(i)->getAmount() / 100 : m_armorMulti -= m_effectList.at(i)->getAmount() / 100;
+					break;
+				case Effect::EffectTarget::MAGICAL_RESISTANCE:
+					isPositive == true ? m_magicalResistanceMulti += m_effectList.at(i)->getAmount() / 100 : m_magicalResistanceMulti -= m_effectList.at(i)->getAmount() / 100;
+					break;
+				case Effect::EffectTarget::DAMAGE :
+					isPositive == true ? m_damageMulti += m_effectList.at(i)->getAmount() / 100 : m_damageMulti -= m_effectList.at(i)->getAmount() / 100;
+					break;
+				case Effect::EffectTarget::HEALTH :
+					isPositive == true ? m_healthMulti += m_effectList.at(i)->getAmount() / 100 : m_healthMulti -= m_effectList.at(i)->getAmount() / 100;
+					break;
+				case Effect::EffectTarget::MANA :
+					isPositive == true ? m_manaMulti += m_effectList.at(i)->getAmount() / 100 : m_manaMulti -= m_effectList.at(i)->getAmount() / 100;
+					break;
+				case Effect::EffectTarget::MOVEMENT :
+					isPositive == true ? m_movementMulti += m_effectList.at(i)->getAmount() / 100 : m_movementMulti -= m_effectList.at(i)->getAmount() / 100;
+					break;
+			}
+		}
+		// DECREMENT TURN TIME
+		m_effectRemainingTurns.at(m_effectList.at(i)->getName())--;
+		if (m_effectRemainingTurns.at(m_effectList.at(i)->getName()) == 0) {
+			// REMOVE FROM LISTS IF TURN = 0
+			m_effectRemainingTurns.erase(m_effectList.at(i)->getName());
+			m_effectList.erase(m_effectList.begin()+i);
+		}
+	}
 }

@@ -23,9 +23,6 @@
     <ClCompile Include="Weapon.cpp">
       <Filter>Equipement</Filter>
     </ClCompile>
-    <ClCompile Include="Effects.cpp">
-      <Filter>Skills</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Core</Filter>
     </ClCompile>
@@ -59,6 +56,21 @@
     <ClCompile Include="TwoHands.cpp">
       <Filter>Equipement\Weapon</Filter>
     </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="ChainmailArmour.cpp">
+      <Filter>Equipement\Armour</Filter>
+    </ClCompile>
+    <ClCompile Include="ClothArmour.cpp">
+      <Filter>Equipement\Armour</Filter>
+    </ClCompile>
+    <ClCompile Include="LeatherArmour.cpp">
+      <Filter>Equipement\Armour</Filter>
+    </ClCompile>
+    <ClCompile Include="PlateArmour.cpp">
+      <Filter>Equipement\Armour</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AiCharacter.h">
@@ -81,9 +93,6 @@
     </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Equipement</Filter>
-    </ClInclude>
-    <ClInclude Include="Effects.h">
-      <Filter>Skills</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Core</Filter>
@@ -117,6 +126,21 @@
     </ClInclude>
     <ClInclude Include="Sword.h">
       <Filter>Equipement\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="ChainmailArmour.h">
+      <Filter>Equipement\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="ClothArmour.h">
+      <Filter>Equipement\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="LeatherArmour.h">
+      <Filter>Equipement\Armour</Filter>
+    </ClInclude>
+    <ClInclude Include="PlateArmour.h">
+      <Filter>Equipement\Armour</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
