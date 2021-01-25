@@ -7,6 +7,10 @@
 class Map : public GameObject
 {
 
+	public:
+
+	private:
+
 };
 #endif
 
