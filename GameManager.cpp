@@ -11,7 +11,7 @@ GameManager::~GameManager() {
 
 void GameManager::initGame()
 {
-	std::cout << "WORK IN PROGRESS AHAHAHAH" << std::endl;
+	std::cout << "WORK IN PROGRESS IHIHIHIHIHIH" << std::endl;
 	exit(EXIT_SUCCESS);
 }
 
