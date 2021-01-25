@@ -143,6 +143,7 @@
     <ClCompile Include="AiCharacter.cpp" />
     <ClCompile Include="Armour.cpp" />
     <ClCompile Include="ChainmailArmour.cpp" />
+    <ClCompile Include="CharacterCreator.cpp" />
     <ClCompile Include="Class.cpp" />
     <ClCompile Include="ClothArmour.cpp" />
     <ClCompile Include="Curve.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="AiCharacter.h" />
     <ClInclude Include="Armour.h" />
     <ClInclude Include="ChainmailArmour.h" />
+    <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="Class.h" />
     <ClInclude Include="ClothArmour.h" />
     <ClInclude Include="Curve.h" />

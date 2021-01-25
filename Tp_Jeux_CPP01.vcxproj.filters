@@ -71,6 +71,9 @@
     <ClCompile Include="PlateArmour.cpp">
       <Filter>Equipement\Armour</Filter>
     </ClCompile>
+    <ClCompile Include="CharacterCreator.cpp">
+      <Filter>Core\Menus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AiCharacter.h">
@@ -142,6 +145,9 @@
     <ClInclude Include="PlateArmour.h">
       <Filter>Equipement\Armour</Filter>
     </ClInclude>
+    <ClInclude Include="CharacterCreator.h">
+      <Filter>Core\Menus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -170,6 +176,9 @@
     </Filter>
     <Filter Include="Class">
       <UniqueIdentifier>{7836f34c-0896-41b7-a6db-0b4c5db47d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Menus">
+      <UniqueIdentifier>{6f683086-ff6a-4f7a-bfb3-3c1194425219}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

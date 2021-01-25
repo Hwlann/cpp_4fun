@@ -4,6 +4,13 @@
 
 
 #include "GameObject.h"
+
+enum class UnitClass {
+	WARRIOR,
+	RANGER,
+	WIZARD
+};
+
 class Class : public GameObject
 {
 };

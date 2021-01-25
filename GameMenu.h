@@ -75,6 +75,7 @@ class GameMenu : public GameObject
 		int m_index;
 		int m_numberOfPlayers;
 		int m_currIndex;
+		std::string test = "test";
 
 		std::map<std::string, int*> myWonderfullMap;
 
@@ -85,7 +86,7 @@ class GameMenu : public GameObject
 		std::vector<std::vector<std::string>> m_menus = { 
 															{ "mainmenu", "New Game", "Options", "Exit" },
 															{ "sure", "Yes", "Back" },
-															{ "selectplayers", "<    {{ $m_numberOfPlayers }} players     >", "Back" },
+															{ "selectplayers", "<    {{ $m_gameDifficulty }} players     >", "Back" },
 															{ "options", "<    Difficuly : {{ $m_gameDifficulty }}     >", "Apply", "Back" }
 														};
 		GameMenu();
