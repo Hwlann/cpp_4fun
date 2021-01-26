@@ -1,4 +1,5 @@
 #include "GameMenu.h"
+#include "CharacterCreator.h"
 
 GameMenu *GameMenu::m_gameMenu = nullptr;
 
@@ -77,34 +78,7 @@ void GameMenu::selectAction(int menuIndex)
 		key_press = _getch();
 		ascii_value = key_press;
 		int maxIndex = m_menus.at(menuIndex).size() - 1;
-		if (menuIndex == DEF_HOW_MANY)
-		{
-			if (ascii_value == 75 && m_currIndex == 1)
-			{
-				Beep(600 - 30 *  m_numberOfPlayers, 80);
-				m_numberOfPlayers --;
-				Utility::clamp(&m_numberOfPlayers, DEF_MIN_PLAYERS_COUNT, DEF_MAX_PLAYERS_COUNT);
-				drawMenu(menuIndex);
-				break;
-			}
-			if (ascii_value == 77 && m_currIndex == 1)
-			{
-				Beep(
-					((235.0f / 1008.0f)		* std::pow(m_numberOfPlayers, 8)) -
-					((1867.0f / 168.0f)		* std::pow(m_numberOfPlayers, 7)) +
-					((8101.0f / 36.0f)		* std::pow(m_numberOfPlayers, 6)) -
-					((60527.0f / 24.0f)		* std::pow(m_numberOfPlayers, 5)) +
-					((2457355.0f / 144.0f)	* std::pow(m_numberOfPlayers, 4)) -
-					((427091.0f / 6.0f)		* std::pow(m_numberOfPlayers, 3)) +
-					((14965001.0f / 84.0f)	* std::pow(m_numberOfPlayers, 2)) -
-					((5117282.0f / 21.0f)	* m_numberOfPlayers)+ 139400.0f
-					, 250);
-				m_numberOfPlayers ++;
-				Utility::clamp(&m_numberOfPlayers, DEF_MIN_PLAYERS_COUNT, DEF_MAX_PLAYERS_COUNT);
-				drawMenu(menuIndex);
-				break;
-			}
-		}
+
 		if (menuIndex == DEF_OPTIONS)
 		{
 			if (ascii_value == 75 && m_currIndex == 1)
@@ -186,9 +160,11 @@ void GameMenu::menuSelected(int menuIndex, int index) {
 			switch (m_index)
 			{
 			case 1:
-				//GameManager::getInstance()->initNewGame(m_numberOfPlayers);
+				CharacterCreator::Instance()->drawCharacterSetup();
 				break;
 			case 2:
+				GameManager::getInstance()->initGame();
+			case 3:
 				drawMenu(DEF_MAIN_MENU);
 				break;
 			}

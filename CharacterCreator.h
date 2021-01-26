@@ -2,8 +2,10 @@
 
 #include "GameObject.h"
 #include "Class.h"
+#include "Utility.h"
 
 #include <vector>
+#include <map>
 
 class CharacterCreator : public GameObject
 {
@@ -21,8 +23,10 @@ private:
 	CharacterCreator();
 	virtual ~CharacterCreator();
 
-	std::string m_characterName = "";
+	std::string m_characterName = "Toto";
 	UnitClass m_characterClass = UnitClass::WARRIOR;
+
+	std::map<std::string, std::string*> myWonderfullMap;
 
 	CharacterCreator(std::string name = "CharacterCreator");
 };
