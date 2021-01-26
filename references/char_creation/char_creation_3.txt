@@ -16,6 +16,6 @@ Dexterity :
 
 <   0   >
 
-Magic :
+Intelligence :
 
 <   0   >

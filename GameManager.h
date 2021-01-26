@@ -7,6 +7,7 @@
 #include "Sword.h"
 #include "Chief.h"
 #include "Warrior.h"
+#include "GameMenu.h"
 
 #include <chrono>
 #include <thread>
@@ -18,6 +19,7 @@ class GameManager : public GameObject
 		~GameManager();
 
 		void initGame();
+		void goToMainMenu();
 
 	private:
 		static GameManager *m_gameManager;

@@ -3,12 +3,11 @@
 
 #include <iostream>
 #include "GameManager.h"
-#include "GameMenu.h"
 
 int main()
 {
-	//GameManager::getInstance();
-	GameMenu::getInstance();
+	::SendMessage(::GetConsoleWindow(), WM_SYSKEYDOWN, VK_RETURN, 0x20000000);
+	GameManager::getInstance()->goToMainMenu();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

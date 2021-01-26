@@ -43,6 +43,11 @@ void GameManager::initGame()
 	*/
 }
 
+void GameManager::goToMainMenu()
+{
+	GameMenu::getInstance()->init();
+}
+
 GameManager *GameManager::getInstance() {
 	if (m_gameManager == nullptr) {
 		m_gameManager = new GameManager();

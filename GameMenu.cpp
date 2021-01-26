@@ -39,6 +39,11 @@ GameMenu *GameMenu::getInstance() {
 	return m_gameMenu;
 }
 
+void GameMenu::init()
+{
+	drawMenu(DEF_MAIN_MENU);
+}
+
 void GameMenu::drawMenu(int menuIndex) {
 	system("cls");
 
@@ -160,7 +165,7 @@ void GameMenu::menuSelected(int menuIndex, int index) {
 			switch (m_index)
 			{
 			case 1:
-				CharacterCreator::Instance()->drawCharacterSetup();
+				CharacterCreator::Instance()->drawMenu(0);
 				break;
 			case 2:
 				GameManager::getInstance()->initGame();

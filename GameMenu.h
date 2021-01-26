@@ -63,6 +63,7 @@ class GameMenu : public GameObject
 	public:
 		~GameMenu();
 		static GameMenu* getInstance();
+		void init();
 		void drawMenu(int menuIndex);
 		void menuSelected(int menuIndex, int index);
 		void selectAction(int menuIndex);
