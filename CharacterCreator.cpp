@@ -19,9 +19,13 @@ CharacterCreator* CharacterCreator::Instance()
 
 void CharacterCreator::drawCharacterSetup()
 {
-	std::vector<std::string> menuChoises = {"character-creation", "{{ &m_characterName }}", "<  {{ &getClassNameFromEnum() }}  >", "Accept", "Back"};
+	system("cls");
+	std::vector<std::string> menuChoises = {"character-creation", "{{ &m_characterName }}", "<  {{ &getClassNameFromEnum }}  >", "Accept", "Back"};
+	myWonderfullMap.insert(std::pair<std::string, std::string*>("m_characterName", &m_characterName));
+	myWonderfullMap.insert(std::pair<std::string, std::string*>("getClassNameFromEnum", &getClassNameFromEnum()));
 
-
+	std::cout << Utility::printT(menuChoises.at(1), myWonderfullMap) << std::endl;
+	std::cout << Utility::printT(menuChoises.at(2), myWonderfullMap) << std::endl;
 }
 
 void CharacterCreator::drawCharacterFaces()
