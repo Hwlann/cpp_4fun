@@ -184,24 +184,25 @@ void CharacterCreator::menuSelected(int menuIndex, int index)
 			case 1:
 				drawCharacterSetup();
 				break;
+
 			case 2:
 				drawCharacterSetup();
 				break;
+
 			case 3:
 				m_currIndex = 1;
-				characterFile.open("player.cnf", std::fstream::in);
-				characterFile << "Name : " << m_characterName << "\n";
-				characterFile << "Class : " << getClassNameFromEnum() << "\n";
-				characterFile.close();
+				Utility::writeToFile("player.cnf", 0, std::string("Name : " + m_characterName + "\n"));
+				Utility::writeToFile("player.cnf", 1, std::string("Class : " + getClassNameFromEnum() + "\n"));
 				drawMenu(DEF_RACEMENU);
 				break;
+
 			case 4:
 				m_currIndex = 1;
 				break;
 			}
 			break;
 		case DEF_RACEMENU:
-
+				
 			break;
 		}
 	}
