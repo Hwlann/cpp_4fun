@@ -121,7 +121,6 @@ void CharacterCreator::drawMenu(int menuIndex)
 		case 2:
 				drawCharacterSkills();
 			break;
-		default:
 	}
 }
 
