@@ -289,3 +289,23 @@ std::vector<std::pair<int, int>> Utility::getPath(std::pair<int, int> origin, st
 float Utility::distance(std::pair<int, int> origin, std::pair<int, int> destination) {
     return sqrt(pow(destination.first - origin.first, 2) + pow(destination.second - origin.second, 2));
 }
+
+bool Utility::writeToFile(char const* filename, unsigned lineNo, std::string toWrite)
+{
+    std::fstream file(filename);
+    if (!file)
+        return false;
+
+    unsigned currentLine = 0;
+    while (currentLine < lineNo)
+    {
+        file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        ++currentLine;
+    }
+
+    file.seekp(file.tellg());
+
+    file << toWrite;
+
+    return true;
+}
