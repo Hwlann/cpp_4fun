@@ -75,7 +75,6 @@ class GameMenu : public GameObject
 		int m_index;
 		int m_numberOfPlayers;
 		int m_currIndex;
-		std::string test = "test";
 
 		std::map<std::string, int*> myWonderfullMap;
 
