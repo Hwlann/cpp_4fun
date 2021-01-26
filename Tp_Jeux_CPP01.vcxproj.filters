@@ -92,6 +92,12 @@
     <ClCompile Include="Ork.cpp">
       <Filter>Class &amp; Race\Race</Filter>
     </ClCompile>
+    <ClCompile Include="Curves.cpp">
+      <Filter>Miscellanous</Filter>
+    </ClCompile>
+    <ClCompile Include="Chief.cpp">
+      <Filter>Spawnables\Character\SubClasses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -183,6 +189,12 @@
     </ClInclude>
     <ClInclude Include="Ork.h">
       <Filter>Class &amp; Race\Race</Filter>
+    </ClInclude>
+    <ClInclude Include="Curves.h">
+      <Filter>Miscellanous</Filter>
+    </ClInclude>
+    <ClInclude Include="Chief.h">
+      <Filter>Spawnables\Character\SubClasses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -14,6 +14,7 @@ Effect::Effect(EffectType effectType, EffectTarget effectTarget, SkillType bonus
 
 Effect::~Effect()
 {
+
 }
 
 int Effect::getAmount()
@@ -39,4 +40,9 @@ Effect::EffectType* Effect::getEffectType()
 Effect::EffectTarget* Effect::getEffectTarget()
 {
 	return &m_effectTarget;
+}
+
+void Effect::modifySkillAttributeBySkillType(int attribut)
+{
+	m_amount += m_damageCurve->getImageOfX(attribut);
 }

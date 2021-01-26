@@ -2,6 +2,8 @@
 #ifndef DEF_EFFECT
 #define DEF_EFFECT
 #include "GameObject.h"
+#include "Curve.h"
+
 class Effect : public GameObject
 {
 	public:
@@ -39,11 +41,16 @@ class Effect : public GameObject
 		bool getApplyEachTurn();
 		EffectType* getEffectType();
 		EffectTarget* getEffectTarget();
+
+		// METHODS
+		void modifySkillAttributeBySkillType(int attribut);
 	
 	private:
 		int m_amount = 0;
 		int m_turns = 0;
 		bool m_applyEachTurn = false;
+
+		Curve* m_damageCurve= nullptr;
 
 		SkillType m_bonusDamageStat;
 		EffectType m_effectType;

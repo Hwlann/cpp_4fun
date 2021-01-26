@@ -12,6 +12,12 @@ Character::~Character() {
 	if (m_class != nullptr) delete m_class;
 }
 
+void Character::attackTarget(Character *source, Character* target, Skill * skill)
+{
+	std::cout << source->getName() << " use " << skill->getName() << " on " << target->getName() << " " << std::endl;
+	target->applySkill(skill);
+}
+
 void Character::moveAlongPath(std::vector<std::pair<int, int>> path)
 {
 
@@ -34,6 +40,7 @@ void Character::applySkill(Skill *skill) {
 
 void Character::takeDamage(int32_t damageAmount)
 {
+	std::cout << "> " << m_name << " Outch\n";
 	m_currentHp -= damageAmount;
 	Utility::clamp(&m_currentHp, 0, m_maxHp);
 }
@@ -157,4 +164,9 @@ void Character::applyEffects()
 			m_effectList.erase(m_effectList.begin()+i);
 		}
 	}
+}
+
+Weapon* Character::getWeapon()
+{
+	return m_rightHand;
 }

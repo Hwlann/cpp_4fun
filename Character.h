@@ -24,11 +24,14 @@ class Character : public GameObject
 		Character();
 		virtual ~Character();
 
+		void attackTarget(Character *source, Character* target, Skill* skill);
+
 		// EFFECTS
 		void addEffectToCharacter(Effect *effect);
 		void applyEffects();
 
 		// GETTER
+		Weapon* getWeapon();
 
 		// SETTERS
 		void setMaxHp(int maxHp);
@@ -73,8 +76,11 @@ class Character : public GameObject
 		// OBJECTS
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;
+
 		Armour *m_armour = nullptr;
+
 		Class *m_class = nullptr;
+
 		std::vector<Effect*> m_effectList;
 		std::map<std::string, int> m_effectRemainingTurns;
 };

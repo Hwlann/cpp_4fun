@@ -9,6 +9,8 @@ class Equipment : public GameObject
 		Equipment();
 		virtual ~Equipment();
 
+		Skill* getMainSkill();
+
 	protected:
 		Skill *m_mainSkill = nullptr;
 };

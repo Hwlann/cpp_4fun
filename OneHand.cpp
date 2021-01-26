@@ -11,7 +11,7 @@ OneHand::~OneHand()
 
 Skill* OneHand::getOffHandSkill()
 {
-	return nullptr;
+	return m_offHandSkill;
 }
 
 float OneHand::getoffHandsDamageMultiplicator()

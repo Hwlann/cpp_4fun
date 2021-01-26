@@ -21,9 +21,13 @@ class AiCharacter : public Character
         void moveToSafeLocation();
         void moveToClosestLocationFromTargetWithSafestPath();
 
+        // FORCE TARGET
+        void setForceTarget(Character* target);
+
     private :
         Curve* m_difficultyCurve = nullptr;
         Behaviour* m_behaviour = nullptr;
+        Character* m_forcetarget = nullptr;
 };
 
 #endif

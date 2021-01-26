@@ -6,6 +6,7 @@ AiCharacter::AiCharacter()
 
 AiCharacter::~AiCharacter()
 {
+	if (m_forcetarget != nullptr) delete m_forcetarget;
 }
 
 void AiCharacter::applyDifficulty()
@@ -22,5 +23,9 @@ void AiCharacter::moveToSafeLocation()
 }
 
 void AiCharacter::moveToClosestLocationFromTargetWithSafestPath()
+{
+}
+
+void AiCharacter::setForceTarget(Character* target)
 {
 }
