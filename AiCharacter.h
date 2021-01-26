@@ -4,6 +4,8 @@
 
 #include "Character.h"
 #include "Curve.h"
+#include "Behaviour.h"
+
 
 class AiCharacter : public Character
 {
@@ -21,6 +23,7 @@ class AiCharacter : public Character
 
     private :
         Curve* m_difficultyCurve = nullptr;
+        Behaviour* m_behaviour = nullptr;
 };
 
 #endif
