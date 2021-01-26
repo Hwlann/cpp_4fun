@@ -6,8 +6,10 @@
 class Equipment : public GameObject
 {
 	public:
+		Equipment();
+		virtual ~Equipment();
 
 	protected:
-		Skill *m_mainSkill;
+		Skill *m_mainSkill = nullptr;
 };
 #endif

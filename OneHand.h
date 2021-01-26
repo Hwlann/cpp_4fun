@@ -7,7 +7,10 @@ class OneHand : public virtual Weapon
 		virtual ~OneHand();
 		Skill* getOffHandSkill();
 
+		float getoffHandsDamageMultiplicator();
+
 	protected :
 		Skill *m_offHandSkill = nullptr;
+		float m_offHandsDamageMultiplicator = 0.75;
 };
 

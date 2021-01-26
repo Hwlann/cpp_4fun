@@ -5,6 +5,15 @@
 
 class SpawnableObject : public GameObject
 {
+	public:
+		SpawnableObject();
+		virtual ~SpawnableObject();
+		int getDisplayedAsciiCode();
+		void setDisplayedAsciiCode(int displayedAsciiCode);
+
+	private:
+		int m_displayedAsciiCode = 0;
+
 };
 #endif
 

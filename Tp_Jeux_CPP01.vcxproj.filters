@@ -2,14 +2,8 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Tp_Jeux_CPP01.cpp" />
-    <ClCompile Include="AiCharacter.cpp">
-      <Filter>Character</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>Character</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerCharacter.cpp">
-      <Filter>Character</Filter>
+      <Filter>Spawnables\Character</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
       <Filter>Core</Filter>
@@ -42,10 +36,7 @@
       <Filter>Equipement</Filter>
     </ClCompile>
     <ClCompile Include="Class.cpp">
-      <Filter>Class</Filter>
-    </ClCompile>
-    <ClCompile Include="Warrior.cpp">
-      <Filter>Class</Filter>
+      <Filter>Class &amp; Race</Filter>
     </ClCompile>
     <ClCompile Include="OneHand.cpp">
       <Filter>Equipement\Weapon</Filter>
@@ -74,16 +65,37 @@
     <ClCompile Include="CharacterCreator.cpp">
       <Filter>Core\Menus</Filter>
     </ClCompile>
+    <ClCompile Include="SpawnableObject.cpp">
+      <Filter>Spawnables</Filter>
+    </ClCompile>
+    <ClCompile Include="Behaviour.cpp">
+      <Filter>Ai</Filter>
+    </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Spawnables\Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Spawnables\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="AiCharacter.cpp">
+      <Filter>Spawnables\Character\SubClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCharacter.cpp">
+      <Filter>Spawnables\Character\SubClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior.cpp">
+      <Filter>Class &amp; Race\Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Race.cpp">
+      <Filter>Class &amp; Race</Filter>
+    </ClCompile>
+    <ClCompile Include="Ork.cpp">
+      <Filter>Class &amp; Race\Race</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AiCharacter.h">
-      <Filter>Character</Filter>
-    </ClInclude>
     <ClInclude Include="Character.h">
-      <Filter>Character</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerCharacter.h">
-      <Filter>Character</Filter>
+      <Filter>Spawnables\Character</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
       <Filter>Core</Filter>
@@ -116,10 +128,7 @@
       <Filter>Equipement</Filter>
     </ClInclude>
     <ClInclude Include="Class.h">
-      <Filter>Class</Filter>
-    </ClInclude>
-    <ClInclude Include="Warrior.h">
-      <Filter>Class</Filter>
+      <Filter>Class &amp; Race</Filter>
     </ClInclude>
     <ClInclude Include="TwoHands.h">
       <Filter>Equipement\Weapon</Filter>
@@ -148,13 +157,37 @@
     <ClInclude Include="CharacterCreator.h">
       <Filter>Core\Menus</Filter>
     </ClInclude>
+    <ClInclude Include="SpawnableObject.h">
+      <Filter>Spawnables</Filter>
+    </ClInclude>
+    <ClInclude Include="Behaviour.h">
+      <Filter>Ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Spawnables\Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Spawnables\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="AiCharacter.h">
+      <Filter>Spawnables\Character\SubClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCharacter.h">
+      <Filter>Spawnables\Character\SubClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Warrior.h">
+      <Filter>Class &amp; Race\Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Race.h">
+      <Filter>Class &amp; Race</Filter>
+    </ClInclude>
+    <ClInclude Include="Ork.h">
+      <Filter>Class &amp; Race\Race</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
       <UniqueIdentifier>{255fc859-e8e4-498a-9f4c-40a341b5b3aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Character">
-      <UniqueIdentifier>{2a684d56-108f-4d9d-9edb-6cd8bf163dcb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Equipement">
       <UniqueIdentifier>{651e1108-22ae-405e-a360-8b31f55ea122}</UniqueIdentifier>
@@ -174,11 +207,35 @@
     <Filter Include="Equipement\Weapon">
       <UniqueIdentifier>{2308f06f-7454-4b27-a340-49ca4ac2d2f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Class">
-      <UniqueIdentifier>{7836f34c-0896-41b7-a6db-0b4c5db47d4d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Menus">
       <UniqueIdentifier>{6f683086-ff6a-4f7a-bfb3-3c1194425219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spawnables">
+      <UniqueIdentifier>{6e835cc6-ddb2-4747-9bf1-f69645057a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spawnables\Character">
+      <UniqueIdentifier>{2a684d56-108f-4d9d-9edb-6cd8bf163dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spawnables\Terrain">
+      <UniqueIdentifier>{0d296bf3-9081-415b-9739-84dba8e2e9a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spawnables\Obstacle">
+      <UniqueIdentifier>{ba88b154-0911-47a6-a034-8568f359f6c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ai">
+      <UniqueIdentifier>{5113173d-40b5-4244-b6bc-b1ac6e565ad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spawnables\Character\SubClasses">
+      <UniqueIdentifier>{66c34664-668a-47e9-a234-514b221cec65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class &amp; Race">
+      <UniqueIdentifier>{7836f34c-0896-41b7-a6db-0b4c5db47d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class &amp; Race\Class">
+      <UniqueIdentifier>{f44c1bdc-c354-4677-b323-306d47a53584}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class &amp; Race\Race">
+      <UniqueIdentifier>{020fffac-8656-43ed-b3a6-d2995efc9266}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="AiCharacter.cpp" />
     <ClCompile Include="Armour.cpp" />
+    <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="ChainmailArmour.cpp" />
     <ClCompile Include="CharacterCreator.cpp" />
     <ClCompile Include="Class.cpp" />
@@ -155,11 +156,16 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="LeatherArmour.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="OneHand.cpp" />
+    <ClCompile Include="Ork.cpp" />
     <ClCompile Include="PlateArmour.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
+    <ClCompile Include="Race.cpp" />
     <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="SpawnableObject.cpp" />
     <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Tp_Jeux_CPP01.cpp" />
     <ClCompile Include="TwoHands.cpp" />
     <ClCompile Include="Utility.cpp" />
@@ -169,6 +175,7 @@
   <ItemGroup>
     <ClInclude Include="AiCharacter.h" />
     <ClInclude Include="Armour.h" />
+    <ClInclude Include="Behaviour.h" />
     <ClInclude Include="ChainmailArmour.h" />
     <ClInclude Include="CharacterCreator.h" />
     <ClInclude Include="Class.h" />
@@ -182,11 +189,16 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="LeatherArmour.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OneHand.h" />
+    <ClInclude Include="Ork.h" />
     <ClInclude Include="PlateArmour.h" />
     <ClInclude Include="PlayerCharacter.h" />
+    <ClInclude Include="Race.h" />
     <ClInclude Include="Skill.h" />
+    <ClInclude Include="SpawnableObject.h" />
     <ClInclude Include="Sword.h" />
+    <ClInclude Include="Terrain.h" />
     <ClInclude Include="TwoHands.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="Warrior.h" />

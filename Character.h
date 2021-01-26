@@ -31,6 +31,13 @@ class Character : public GameObject
 		// GETTER
 
 		// SETTERS
+		void setMaxHp(int maxHp);
+		void setMaxMana(int maxMana);
+		void setMaxActionPoint(int maxAP);
+		void setMaxMovementPoint(int maxMP);
+		void setDodgeRate(float dodgeRate);
+		void setPrecision(float precision);
+			
 		void setLeftHandWeapon(Weapon* weapon);
 		void setRightHandWeapon(Weapon* weapon);
 		void setDualHandWeapon(Weapon *weapon);
@@ -57,10 +64,11 @@ class Character : public GameObject
 
 	protected:
 		// VARIABLES
-		int32_t m_maxHp = 0, m_currentHp = 0;
+		int32_t m_currentHp = 0, m_maxHp = 0;
+		int32_t m_currentMana = 0, m_maxMana = 0;
 		int32_t m_actionPoint = 0, m_maxActionPoint = 0 ;
 		int32_t m_movementPoint = 0, m_maxMovementPoint = 0;
-		float m_dodgeRate = 0.0f, precision = 0.0f;
+		float m_dodgeRate = 0.0f, m_precision = 0.0f;
 
 		// OBJECTS
 		Weapon *m_leftHand = nullptr;

@@ -8,10 +8,12 @@
 class Weapon : public Equipment
 {
 	public :
-
-
+		Weapon();
+		virtual ~Weapon();
 
 	private:
+
+
 };
 
 #endif

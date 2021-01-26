@@ -1,8 +1,8 @@
 #include "Skill.h"
 
 
-Skill::Skill(int damage, int range) :
-	m_damage(damage), m_range(range)
+Skill::Skill(int damage, int aoe, int range) :
+	m_damage(damage), m_areaOfEffect(aoe), m_range(range)
 {
 }
 
@@ -33,7 +33,7 @@ Effect* Skill::getSecondaryEffect()
 	return m_secondaryEffect;
 }
 
-Effect::SkillType* Skill::skillType()
+Effect::SkillType* Skill::getSkillType()
 {
 	return m_skillType;
 }
@@ -51,4 +51,9 @@ int Skill::getRange()
 int Skill::getManaCost()
 {
 	return m_manaCost;
+}
+
+void Skill::increaseDamage(float coef)
+{
+	m_damage *= coef;
 }
