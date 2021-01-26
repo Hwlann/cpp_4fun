@@ -20,7 +20,7 @@ CharacterCreator* CharacterCreator::Instance()
 
 void CharacterCreator::drawCharacterSetup()
 {
-	m_menuIndex = 0;
+	m_menuIndex = DEF_SETUPMENU;
 	system("cls");
 
 	std::ifstream title;
@@ -31,20 +31,25 @@ void CharacterCreator::drawCharacterSetup()
 	std::cout << "\n\n";
 
 	std::cout << "\t\t Select your name :" << std::endl << std::endl;
-	std::cout << "\t\t" << ((m_currIndex == 0) ? "> " : "  ") << Utility::printT(m_setupMenu.at(1), myWonderfullMap) << std::endl << std::endl;
+	std::cout << "\t\t" << ((m_currIndex == 1) ? "> " : "  ") << Utility::printT(m_setupMenu.at(1), myWonderfullMap) << std::endl << std::endl;
 
 
 	std::cout << "\t\t Select your class :" << std::endl << std::endl;
-	std::cout << "\t\t" << ((m_currIndex == 1) ? "> " : "  ") << Utility::printT(m_setupMenu.at(2), myWonderfullMap) << std::endl << std::endl;
+	std::cout << "\t\t" << ((m_currIndex == 2) ? "> " : "  ") << "<    " << getClassNameFromEnum() << "    >" << std::endl << std::endl;
 
-	std::cout << "\t\t" << ((m_currIndex == 2) ? "> " : "  ") << Utility::printT(m_setupMenu.at(3), myWonderfullMap) << std::endl;
-	std::cout << "\t\t" << ((m_currIndex == 3) ? "> " : "  ") << Utility::printT(m_setupMenu.at(4), myWonderfullMap) << std::endl << std::endl;
+	std::cout << "\t\t" << ((m_currIndex == 3) ? "> " : "  ") << Utility::printT(m_setupMenu.at(3), myWonderfullMap) << std::endl;
+	std::cout << "\t\t" << ((m_currIndex == 4) ? "> " : "  ") << Utility::printT(m_setupMenu.at(4), myWonderfullMap) << std::endl << std::endl;
 
 	selectAction(m_menuIndex);
 }
 
-void CharacterCreator::drawCharacterFaces()
+void CharacterCreator::drawCharacterRace()
 {
+	m_menuIndex = DEF_RACEMENU;
+
+	system("cls");
+
+	std::cout << "race" << std::endl;
 }
 
 void CharacterCreator::drawCharacterSkills()
@@ -78,7 +83,39 @@ void CharacterCreator::selectAction(int menuIndex)
 	{
 		key_press = _getch();
 		ascii_value = key_press;
+
 		int maxIndex = m_setupMenu.size() - 1;
+
+		if (menuIndex == DEF_SETUPMENU)
+		{
+			if (m_currIndex == 1 && ascii_value > 47 && ascii_value < 58 || ascii_value > 96 && ascii_value < 123 || ascii_value == 32) {
+				m_characterName += ascii_value;
+				drawMenu(menuIndex);
+			}
+			if (ascii_value == 8 && m_currIndex == 1)
+			{
+				if(m_characterName.size() > 0) m_characterName = m_characterName.substr(0, m_characterName.size() - 1);
+				drawMenu(menuIndex);
+			}
+			if (ascii_value == 75 && m_currIndex == 2)
+			{
+				if (m_characterClass == UnitClass::WARRIOR) m_characterClass = UnitClass::RANGER;
+				else if (m_characterClass == UnitClass::RANGER) m_characterClass = UnitClass::WIZARD;
+				else if (m_characterClass == UnitClass::WIZARD) m_characterClass = UnitClass::WARRIOR;
+
+				drawMenu(menuIndex);
+				break;
+			}
+			if (ascii_value == 77 && m_currIndex == 2)
+			{
+				if (m_characterClass == UnitClass::WARRIOR) m_characterClass = UnitClass::WIZARD;
+				else if (m_characterClass == UnitClass::RANGER) m_characterClass = UnitClass::WARRIOR;
+				else if (m_characterClass == UnitClass::WIZARD) m_characterClass = UnitClass::RANGER;
+
+				drawMenu(menuIndex);
+				break;
+			}
+		}
 
 		if (ascii_value == 80)
 		{
@@ -112,15 +149,26 @@ void CharacterCreator::drawMenu(int menuIndex)
 {
 	switch (menuIndex)
 	{
-		case 0:
+		case DEF_SETUPMENU:
 				drawCharacterSetup();
 			break;
-		case 1:
-				drawCharacterFaces();
+		case DEF_RACEMENU:
+				drawCharacterRace();
 			break;
-		case 2:
+		case DEF_SKILLSMENU:
 				drawCharacterSkills();
 			break;
+	}
+}
+
+void CharacterCreator::generatePlayer()
+{
+	std::string myText;
+
+	characterFile.open("player.cnf");
+
+	while (std::getline(characterFile, myText)) {
+		std::cout << myText;
 	}
 }
 
@@ -141,11 +189,19 @@ void CharacterCreator::menuSelected(int menuIndex, int index)
 				break;
 			case 3:
 				m_currIndex = 1;
+				characterFile.open("player.cnf", std::fstream::in);
+				characterFile << "Name : " << m_characterName << "\n";
+				characterFile << "Class : " << getClassNameFromEnum() << "\n";
+				characterFile.close();
+				drawMenu(DEF_RACEMENU);
 				break;
 			case 4:
 				m_currIndex = 1;
 				break;
 			}
+			break;
+		case DEF_RACEMENU:
+
 			break;
 		}
 	}
