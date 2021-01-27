@@ -8,6 +8,6 @@ class TwoHands : public virtual Weapon
         float getTwoHandsDamageMultiplicator();
 
     protected :
-        float m_twoHandsDamageMultiplicator = 1.8;
+        float m_twoHandsDamageMultiplicator = 1.8f;
 };
 

@@ -35,7 +35,7 @@ void GameManager::initGame()
 	m_char_3->setDualHandWeapon(new Sword(true));
 	m_char_3->attackTarget(m_char_3, m_char_1 , m_char_3->getWeapon()->getMainSkill());
 
-	std::this_thread::sleep_for(std::chrono::milliseconds((int)(20 * 1e3)));
+	std::this_thread::sleep_for(std::chrono::milliseconds((int)(10 * 1e3)));
 
 	/*
 	std::cout << "WORK IN PROGRESS IHIHIHIHIHIH" << std::endl;
