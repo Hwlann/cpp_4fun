@@ -5,13 +5,19 @@
 class Curves : public GameObject
 {
 	public:
+		enum class CurveType
+		{
+			CHARACTERISTIC_TO_DAMAGE,
+			MUSIC
+		};
+
 		virtual ~Curves();
 		static Curves* getInstance();
-		Curve* getCurve(std::string curveName);
+		Curve* getCurve(CurveType curveName);
 
 	private:
 		Curves();
-		std::map<std::string, Curve*> m_curveList;
+		std::map<CurveType, Curve*> m_curveList;
 		static Curves* m_curves;
 };
 

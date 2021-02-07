@@ -95,8 +95,8 @@
     <ClCompile Include="Curves.cpp">
       <Filter>Miscellanous</Filter>
     </ClCompile>
-    <ClCompile Include="Chief.cpp">
-      <Filter>Spawnables\Character\SubClasses</Filter>
+    <ClCompile Include="GameInstance.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -132,9 +132,6 @@
     </ClInclude>
     <ClInclude Include="Equipment.h">
       <Filter>Equipement</Filter>
-    </ClInclude>
-    <ClInclude Include="Class.h">
-      <Filter>Class &amp; Race</Filter>
     </ClInclude>
     <ClInclude Include="TwoHands.h">
       <Filter>Equipement\Weapon</Filter>
@@ -195,6 +192,12 @@
     </ClInclude>
     <ClInclude Include="Chief.h">
       <Filter>Spawnables\Character\SubClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInstance.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Class.h">
+      <Filter>Class &amp; Race</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

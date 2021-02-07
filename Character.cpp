@@ -5,6 +5,16 @@ Character::Character()
 
 }
 
+Character::Character(Class* characterClass, Race* race, Weapon* leftHand, Weapon* rightHand, Armour* armour)
+{
+	switch (m_race->getRaceStatModifier()->first)
+	{
+	case Effect::EffectTarget::HEALTH:
+		m_healthMulti += m_race->getRaceStatModifier()->second;
+		break;
+	}
+}
+
 Character::~Character() {
 	if (m_leftHand != nullptr) delete m_leftHand;
 	if (m_rightHand != nullptr) delete m_rightHand;
@@ -102,6 +112,11 @@ void Character::setArmour(Armour* armour)
 void Character::setClass(Class* characterClass)
 {
 	m_class = characterClass;
+}
+
+void Character::setRace(Race* race)
+{
+	m_race = race;
 }
 
 void Character::addEffectToCharacter(Effect* effect)

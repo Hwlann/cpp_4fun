@@ -6,12 +6,25 @@
 
 class Race : public GameObject
 {
-public:
-	Race();
-	virtual ~Race();
+	public:
+		enum class CharacterRace {
+			ORK,
+			HUMAN,
+			ELF
+		};
 
-private:
-	Skill* m_passiveSkill = nullptr;
+		Race();
+		virtual ~Race();
+
+		Skill* getPassiveSkill();
+		std::pair<Effect::EffectTarget, float>* getRaceStatModifier();
+		CharacterRace* getRaceType();
+
+
+	protected:
+		Skill* m_passiveSkill = nullptr;
+		std::pair<Effect::EffectTarget, float> m_statModifier = std::pair<Effect::EffectTarget, float>(Effect::EffectTarget::HEALTH, 1.8f);
+		CharacterRace m_raceType;
 
 
 };

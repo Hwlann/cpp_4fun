@@ -13,6 +13,7 @@
 #include "Weapon.h"
 #include "Armour.h"
 #include "Class.h"
+#include "Race.h"
 #include "Utility.h"
 
 // DEFINES
@@ -22,6 +23,7 @@ class Character : public GameObject
 
 		// CONSTRUCTOR & DESTRUCTOR
 		Character();
+		Character(Class* characterClass, Race* race, Weapon* leftHand, Weapon* rightHand, Armour* armour = nullptr);
 		virtual ~Character();
 
 		void attackTarget(Character *source, Character* target, Skill* skill);
@@ -46,6 +48,7 @@ class Character : public GameObject
 		void setDualHandWeapon(Weapon *weapon);
 		void setArmour(Armour* armour);
 		void setClass(Class* characterClass);
+		void setRace(Race* race);
 
 		// METHODS
 		// HEATLH 
@@ -74,12 +77,11 @@ class Character : public GameObject
 		float m_dodgeRate = 0.0f, m_precision = 0.0f;
 
 		// OBJECTS
+		Class* m_class = nullptr;
+		Race* m_race = nullptr;
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;
-
 		Armour *m_armour = nullptr;
-
-		Class *m_class = nullptr;
 
 		std::vector<Effect*> m_effectList;
 		std::map<std::string, int> m_effectRemainingTurns;

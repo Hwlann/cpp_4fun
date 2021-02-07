@@ -26,13 +26,18 @@ class Effect : public GameObject
 			SECONDARY
 		};
 
+		enum class EffectModifier {
+			FLAT,
+			PERCENT
+		};
+
 		enum class SkillType {
 			STRENGTH,
 			INTELLIGENCE,
 			DEXTERITY
 		};
 
-		Effect(EffectType effectType = EffectType::BUFF, EffectTarget effectTarget = EffectTarget::HEALTH, SkillType bonusDamageStat = SkillType::STRENGTH,  int amount = 0, int turns = 0, bool applyEachTurn = false);
+		Effect(EffectType effectType = EffectType::BUFF, EffectTarget effectTarget = EffectTarget::HEALTH, EffectModifier effectModifier = EffectModifier::FLAT,  SkillType bonusDamageStat = SkillType::STRENGTH,  int amount = 0, int turns = 0, bool applyEachTurn = false);
 		virtual ~Effect();
 
 		// GETTERS
@@ -41,6 +46,7 @@ class Effect : public GameObject
 		bool getApplyEachTurn();
 		EffectType* getEffectType();
 		EffectTarget* getEffectTarget();
+		EffectModifier* getEffectModifier();
 
 		// METHODS
 		void modifySkillAttributeBySkillType(int attribut);
@@ -55,6 +61,7 @@ class Effect : public GameObject
 		SkillType m_bonusDamageStat;
 		EffectType m_effectType;
 		EffectTarget m_effectTarget;
+		EffectModifier m_effectModifier;
 };
 #endif // !DEF_EFFECT
 

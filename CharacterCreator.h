@@ -24,6 +24,13 @@ enum class UnitRace {
 	ELVEN
 };
 
+enum class UnitClass {
+	WARRIOR,
+	RANGER,
+	WIZARD
+};
+
+
 class CharacterCreator : public GameObject
 {
 public:

@@ -145,13 +145,13 @@
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="ChainmailArmour.cpp" />
     <ClCompile Include="CharacterCreator.cpp" />
-    <ClCompile Include="Chief.cpp" />
     <ClCompile Include="Class.cpp" />
     <ClCompile Include="ClothArmour.cpp" />
     <ClCompile Include="Curve.cpp" />
     <ClCompile Include="Curves.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Equipment.cpp" />
+    <ClCompile Include="GameInstance.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="GameMenu.cpp" />
@@ -187,6 +187,7 @@
     <ClInclude Include="Curves.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="Equipment.h" />
+    <ClInclude Include="GameInstance.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="GameMenu.h" />
