@@ -5,7 +5,7 @@
 #include "GameObject.h"
 #include "Map.h"
 
-#include "Character.h"
+#include "AiCharacter.h"
 #include "Sword.h"
 #include "Chief.h"
 #include "Warrior.h"
@@ -19,15 +19,13 @@ class GameInstance : public GameObject
         static GameInstance* getInstance();
         virtual ~GameInstance();
         void startGame();
-
-        void addCharacters(std::pair<Class::UnitClass, std::vector<Character*>> characterByClass, std::pair<Race::CharacterRace, std::vector<Character*>> characterByRace);
+        GameInstance();
+        void addCharacters(std::vector<Character*>characters);
 
     private:
-        GameInstance();
         static GameInstance* m_gameInstance;
 
-        std::map<Class::UnitClass, std::vector<Character*>> m_listByClass;
-        std::map<Race::CharacterRace, std::vector<Character*>> m_listByRace;
+        std::map<std::string, Character *> m_characterList;
 
         Character* m_char_1 = nullptr;
         Character* m_char_2 = nullptr;

@@ -6,12 +6,18 @@
 class Equipment : public GameObject
 {
 	public:
+		enum class EquipmentType {
+			ARMOUR,
+			WEAPON
+		};
+
 		Equipment();
 		virtual ~Equipment();
-
 		Skill* getMainSkill();
+		EquipmentType* getEquipmentType();
 
 	protected:
 		Skill *m_mainSkill = nullptr;
+		EquipmentType* m_equipmentType = nullptr;
 };
 #endif

@@ -1,6 +1,7 @@
 #include "Race.h"
 
-Race::Race()
+Race::Race(CharacterRace type) :
+	m_raceType(type)
 {
 }
 

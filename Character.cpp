@@ -58,6 +58,11 @@ void Character::takeDamage(int32_t damageAmount)
 void Character::heal(int32_t healAmount) {
 }
 
+void Character::setTeamNumber(int8_t teamNumber)
+{
+	m_teamNumber = teamNumber;
+}
+
 void Character::setMaxHp(int maxHp)
 {
 	m_maxHp = maxHp;
@@ -184,4 +189,19 @@ void Character::applyEffects()
 Weapon* Character::getWeapon()
 {
 	return m_rightHand;
+}
+
+Class::UnitClass *Character::getClass()
+{
+	return m_class->getClass();
+}
+
+Race::CharacterRace *Character::getRace()
+{
+	return m_race->getRaceType();
+}
+
+int8_t Character::getTeamNumber()
+{
+	return m_teamNumber;
 }

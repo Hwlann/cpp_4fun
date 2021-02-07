@@ -16,7 +16,6 @@
 #include "Race.h"
 #include "Utility.h"
 
-// DEFINES
 class Character : public GameObject
 {
 	public:
@@ -34,8 +33,13 @@ class Character : public GameObject
 
 		// GETTER
 		Weapon* getWeapon();
+		Class::UnitClass* getClass();
+		Race::CharacterRace* getRace();
+		int8_t getTeamNumber();
 
 		// SETTERS
+		void setTeamNumber(int8_t teamNumber);
+
 		void setMaxHp(int maxHp);
 		void setMaxMana(int maxMana);
 		void setMaxActionPoint(int maxAP);
@@ -75,6 +79,7 @@ class Character : public GameObject
 		int32_t m_actionPoint = 0, m_maxActionPoint = 0 ;
 		int32_t m_movementPoint = 0, m_maxMovementPoint = 0;
 		float m_dodgeRate = 0.0f, m_precision = 0.0f;
+		int8_t m_teamNumber;
 
 		// OBJECTS
 		Class* m_class = nullptr;
@@ -85,6 +90,7 @@ class Character : public GameObject
 
 		std::vector<Effect*> m_effectList;
 		std::map<std::string, int> m_effectRemainingTurns;
+
 };
 #endif // DEF_PERSONNAGE
 

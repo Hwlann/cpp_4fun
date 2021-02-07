@@ -1,5 +1,10 @@
 #include "Armour.h"
 
+Armour::ArmorType* Armour::getArmourType()
+{
+	return m_armourType;
+}
+
 int Armour::getArmour() {
 	return m_armour;
 }

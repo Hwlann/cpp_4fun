@@ -11,7 +11,7 @@ GameManager::~GameManager() {
 
 void GameManager::initGame()
 {
-	GameInstance::getInstance();
+	GameInstance::getInstance()->startGame();
 }
 
 void GameManager::goToMainMenu()

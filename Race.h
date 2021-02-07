@@ -13,7 +13,7 @@ class Race : public GameObject
 			ELF
 		};
 
-		Race();
+		Race(CharacterRace type = CharacterRace::ORK);
 		virtual ~Race();
 
 		Skill* getPassiveSkill();

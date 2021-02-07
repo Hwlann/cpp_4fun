@@ -2,6 +2,10 @@
 #ifndef DEF_GAME_OBJECT
 #define DEF_GAME_OBJECT
 #include <string>
+
+#define MAX(a, b) (a > b ? a : b);
+#define MIN(a, b) (a < b ? a : b);
+
 class GameObject
 {
 	public:

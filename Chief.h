@@ -44,7 +44,9 @@ inline float Chief<T>::getChiefStatsModifier()
 template<class T>
 inline void Chief<T>::setDesignHordeTarget(Character* target)
 {
-	for (int i = 0; i < m_list.size() ; i++) {
-		dynamic_cast<AiCharacter*>(m_list.at(i))->setForceTarget(target);
+	if (m_list.size() > 0) {
+		for (int i = 0; i < m_list.size(); i++) {
+			//dynamic_cast<AiCharacter*>(m_list.at(i))->setForceTarget(target);
+		}
 	}
 }

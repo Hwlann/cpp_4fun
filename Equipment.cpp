@@ -13,3 +13,8 @@ Skill* Equipment::getMainSkill()
 {
 	return m_mainSkill;
 }
+
+Equipment::EquipmentType* Equipment::getEquipmentType()
+{
+	return m_equipmentType;
+}
