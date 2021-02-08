@@ -19,7 +19,7 @@ std::pair<Effect::EffectTarget, float>* Race::getRaceStatModifier()
 	return &m_statModifier;
 }
 
-Race::UnitRace* Race::getRaceType()
+Race::UnitRace Race::getRaceType()
 {
-	return &m_raceType;
+	return m_raceType;
 }

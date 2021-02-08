@@ -7,17 +7,17 @@
 
 class Class : public GameObject
 {
-public: 
-	enum class UnitClass {
-		WARRIOR,
-		RANGER,
-		WIZARD
-	};
-	UnitClass* getClass();
-	Class(UnitClass classType = UnitClass::WARRIOR);
+	public: 
+		enum class UnitClass {
+			WARRIOR,
+			RANGER,
+			WIZARD
+		};
+		UnitClass getClass();
+		Class(UnitClass classType = UnitClass::WARRIOR);
 
-private:
-	UnitClass m_classType;
+	protected:
+		UnitClass m_classType;
 
 };
 #endif // !DEF_CLASS

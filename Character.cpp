@@ -7,10 +7,10 @@ Character::Character()
 
 Character::Character(Class* characterClass, Race* race, Weapon* leftHand, Weapon* rightHand, Armour* armour)
 {
-	switch (m_race->getRaceStatModifier()->first)
+	switch (m_unitRace->getRaceStatModifier()->first)
 	{
 	case Effect::EffectTarget::HEALTH:
-		m_healthMulti += m_race->getRaceStatModifier()->second;
+		m_healthMulti += m_unitRace->getRaceStatModifier()->second;
 		break;
 	}
 }
@@ -19,7 +19,8 @@ Character::~Character() {
 	if (m_leftHand != nullptr) delete m_leftHand;
 	if (m_rightHand != nullptr) delete m_rightHand;
 	if (m_armour != nullptr) delete m_armour;
-	if (m_class != nullptr) delete m_class;
+	if (m_unitClass != nullptr) delete m_unitClass;
+	if (m_unitRace != nullptr) delete m_unitRace;
 }
 
 void Character::attackTarget(Character *source, Character* target, Skill * skill)
@@ -114,14 +115,14 @@ void Character::setArmour(Armour* armour)
 	m_armour = armour;
 }
 
-void Character::setClass(Class* characterClass)
+void Character::setUnitClass(Class* characterClass)
 {
-	m_class = characterClass;
+	m_unitClass = characterClass;
 }
 
-void Character::setRace(Race* race)
+void Character::setUnitRace(Race* race)
 {
-	m_race = race;
+	m_unitRace = race;
 }
 
 void Character::addEffectToCharacter(Effect* effect)
@@ -191,14 +192,14 @@ Weapon* Character::getWeapon()
 	return m_rightHand;
 }
 
-Class::UnitClass *Character::getClass()
+Class::UnitClass Character::getUnitEnumClass()
 {
-	return m_class->getClass();
+	return m_unitClass->getClass();
 }
 
-Race::UnitRace*Character::getRace()
+Race::UnitRace Character::getUnitEnumRace()
 {
-	return m_race->getRaceType();
+	return m_unitRace->getRaceType();
 }
 
 int8_t Character::getTeamNumber()

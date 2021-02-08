@@ -5,6 +5,8 @@
 class Warrior : public Class
 {
 	public:
+		Warrior(Class::UnitClass unitClass = Class::UnitClass::WARRIOR);
+
 	private:
 
 };

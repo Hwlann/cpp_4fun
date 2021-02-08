@@ -18,7 +18,7 @@ class Race : public GameObject
 
 		Skill* getPassiveSkill();
 		std::pair<Effect::EffectTarget, float>* getRaceStatModifier();
-		UnitRace* getRaceType();
+		UnitRace getRaceType();
 
 
 	protected:

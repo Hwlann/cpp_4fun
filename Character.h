@@ -33,8 +33,8 @@ class Character : public GameObject
 
 		// GETTER
 		Weapon* getWeapon();
-		Class::UnitClass* getClass();
-		Race::UnitRace* getRace();
+		Class::UnitClass getUnitEnumClass();
+		Race::UnitRace getUnitEnumRace();
 		int8_t getTeamNumber();
 
 		// SETTERS
@@ -51,8 +51,8 @@ class Character : public GameObject
 		void setRightHandWeapon(Weapon* weapon);
 		void setDualHandWeapon(Weapon *weapon);
 		void setArmour(Armour* armour);
-		void setClass(Class* characterClass);
-		void setRace(Race* race);
+		void setUnitClass(Class* characterClass);
+		void setUnitRace(Race* race);
 
 		// METHODS
 		// HEATLH 
@@ -82,8 +82,8 @@ class Character : public GameObject
 		int8_t m_teamNumber;
 
 		// OBJECTS
-		Class* m_class = nullptr;
-		Race* m_race = nullptr;
+		Class* m_unitClass = nullptr;
+		Race* m_unitRace = nullptr;
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;
 		Armour *m_armour = nullptr;

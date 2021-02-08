@@ -7,21 +7,22 @@ template <class T>
 class Chief : public AiCharacter
 {
 	public:
-		Chief(std::vector<T> list);
+		Chief(std::vector<T *> list);
 		Chief();
 		virtual ~Chief();
 		float getChiefStatsModifier();
 		void setDesignHordeTarget(Character* target);
+		void setHordeList(std::vector<T *> horde);
 
 	private:
 		float m_chiefStatsModifier = 2.0f;
-		std::vector<T> m_list;
+		std::vector<T *> m_hordeList;
 
 };
 #endif // !DEF_CHIEF
 
 template<class T>
-inline Chief<T>::Chief(std::vector<T> list)
+inline Chief<T>::Chief(std::vector<T *> list)
 {
 }
 
@@ -46,9 +47,23 @@ inline float Chief<T>::getChiefStatsModifier()
 template<class T>
 inline void Chief<T>::setDesignHordeTarget(Character* target)
 {
-	if (m_list.size() > 0) {
-		for (int i = 0; i < m_list.size(); i++) {
-			//dynamic_cast<AiCharacter*>(m_list.at(i))->setForceTarget(target);
+	if (m_hordeList.size() > 0) {
+		for (int i = 0; i < m_hordeList.size(); i++) {
+			dynamic_cast<AiCharacter *>(m_hordeList.at(i))->setForceTarget(target);
+		}
+	}
+}
+
+template<class T>
+inline void Chief<T>::setHordeList(std::vector<T *> horde)
+{
+	if (horde.size() > 0) {
+		for (int i = 0; i < horde.size(); i++) {
+			if (dynamic_cast<Character*>(horde.at(i))->getName() != this->getName())
+			{
+				m_hordeList.push_back(horde.at(i));
+				std::cout << "JOINED MY HORDE : " << dynamic_cast<Character*>(horde.at(i))->getName() << std::endl;
+			}
 		}
 	}
 }

@@ -21,6 +21,8 @@ class GameInstance : public GameObject
         void startGame();
         GameInstance();
         void addCharacters(std::vector<Character*>characters);
+        std::vector<AiCharacter*> getAllCharacterOfClass(Class::UnitClass unitClass);
+        std::vector<AiCharacter*> getAllCharacterOfRace(Race::UnitRace unitRace);
 
     private:
         static GameInstance* m_gameInstance;
