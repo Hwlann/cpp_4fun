@@ -28,4 +28,11 @@ void AiCharacter::moveToClosestLocationFromTargetWithSafestPath()
 
 void AiCharacter::setForceTarget(Character* target)
 {
+	if (target->getName() != this->getName()) {
+		std::cout << this->getName() << " - Orders reveived, new target is : " << target->getName() << std::endl;
+		m_forcetarget = target;
+	}
+	else {
+		std::cout << this->getName()  << " - WTF BRUH IMA IN UR TEAM" << std::endl;
+	}
 }

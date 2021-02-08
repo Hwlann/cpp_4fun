@@ -3,19 +3,25 @@
 #define DEF_SKILL
 #include "GameObject.h"
 #include "Effect.h"
+#include "Pattern.h"
 
 class Skill : public GameObject
 {
 	public :
-		Skill(int damage = 0, int aoe = 0, int range = 0);
+		Skill(int damage = 0, Pattern *castingPattern = nullptr, Pattern *aoePattern = nullptr,  bool applyOnAllies = false);
 		virtual ~Skill();
 
 		void addEffect(Effect::EffectCategory, Effect* effect);
 
 		// GETTER
+		bool getApplyOnAllies();
+
 		Effect* getPrimaryEffect();
 		Effect* getSecondaryEffect();
 		Effect::SkillType* getSkillType();
+
+		Pattern* getCastingPattern();
+		Pattern* getAoePattern();
 
 		int getDamage();
 		int getRange();
@@ -28,6 +34,10 @@ class Skill : public GameObject
 		int m_range = 0;
 		int m_manaCost = 0;
 		int m_areaOfEffect = 0;
+		bool m_applyOnAllies = false;
+
+		Pattern* m_castingPattern = nullptr;
+		Pattern* m_aoePattern = nullptr;
 
 		Effect::SkillType* m_skillType = nullptr;
 		Effect *m_primaryEffect = nullptr;

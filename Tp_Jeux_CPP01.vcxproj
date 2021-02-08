@@ -161,10 +161,12 @@
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="OneHand.cpp" />
     <ClCompile Include="Ork.cpp" />
+    <ClCompile Include="Pattern.cpp" />
     <ClCompile Include="PlateArmour.cpp" />
     <ClCompile Include="PlayerCharacter.cpp" />
     <ClCompile Include="Race.cpp" />
     <ClCompile Include="Skill.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SpawnableObject.cpp" />
     <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Terrain.cpp" />
@@ -197,10 +199,12 @@
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OneHand.h" />
     <ClInclude Include="Ork.h" />
+    <ClInclude Include="Pattern.h" />
     <ClInclude Include="PlateArmour.h" />
     <ClInclude Include="PlayerCharacter.h" />
     <ClInclude Include="Race.h" />
     <ClInclude Include="Skill.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="SpawnableObject.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Terrain.h" />

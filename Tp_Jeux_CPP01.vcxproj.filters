@@ -98,6 +98,12 @@
     <ClCompile Include="GameInstance.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Pattern.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Miscellanous</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -198,6 +204,12 @@
     </ClInclude>
     <ClInclude Include="Class.h">
       <Filter>Class &amp; Race</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Miscellanous</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

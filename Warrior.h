@@ -2,13 +2,15 @@
 #ifndef DEF_WARRIOR
 #define DEF_WARRIOR
 #include "Class.h"
-class Warrior : public Class
+#include "AiCharacter.h"
+
+class Warrior : public Class, public AiCharacter
 {
 	public:
-		Warrior(Class::UnitClass unitClass = Class::UnitClass::WARRIOR);
+		Warrior();
+		virtual ~Warrior();
 
 	private:
-
 };
 
 #endif // !DEF_WARRIOR

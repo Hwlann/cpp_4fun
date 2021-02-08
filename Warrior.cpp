@@ -1,6 +1,11 @@
 #include "Warrior.h"
 
-Warrior::Warrior(Class::UnitClass unitClass)
+Warrior::Warrior()
 {
-	m_classType = unitClass;
+
+}
+
+Warrior::~Warrior()
+{
+	m_classType = UnitClass::WARRIOR;
 }

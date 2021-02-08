@@ -3,16 +3,19 @@
 #define DEF_CHIEF
 #include "AiCharacter.h"
 #include <vector>
+#include "Sound.h"
+
 template <class T>
 class Chief : public AiCharacter
 {
 	public:
-		Chief(std::vector<T *> list);
 		Chief();
+		Chief(std::vector<T *> list);
 		virtual ~Chief();
 		float getChiefStatsModifier();
 		void setDesignHordeTarget(Character* target);
 		void setHordeList(std::vector<T *> horde);
+		std::vector<T*> getHordeList();
 
 	private:
 		float m_chiefStatsModifier = 2.0f;
@@ -24,13 +27,13 @@ class Chief : public AiCharacter
 template<class T>
 inline Chief<T>::Chief(std::vector<T *> list)
 {
+	setHordeList(list);
 }
 
 template<class T>
 inline Chief<T>::Chief()
 {
-	this->setMaxHp(m_maxHp * m_chiefStatsModifier);
-	std::cout << " MAX HP : " << m_maxHp << std::endl;;
+
 }
 
 template<class T>
@@ -47,7 +50,10 @@ inline float Chief<T>::getChiefStatsModifier()
 template<class T>
 inline void Chief<T>::setDesignHordeTarget(Character* target)
 {
-	if (m_hordeList.size() > 0) {
+	if (this->getUnitEnumRace() == Race::UnitRace::ORK) std::cout << "\n\tWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGH\n" << std::endl;
+	Sound::playWaghSound();
+	std::cout << this->getName() << " - Destroy this felow kiddo : " << target->getName() << std::endl;
+	if (m_hordeList.size() > 0) { 
 		for (int i = 0; i < m_hordeList.size(); i++) {
 			dynamic_cast<AiCharacter *>(m_hordeList.at(i))->setForceTarget(target);
 		}
@@ -58,12 +64,23 @@ template<class T>
 inline void Chief<T>::setHordeList(std::vector<T *> horde)
 {
 	if (horde.size() > 0) {
-		for (int i = 0; i < horde.size(); i++) {
+		for (int i = horde.size() ; i-- ; ) {
 			if (dynamic_cast<Character*>(horde.at(i))->getName() != this->getName())
 			{
 				m_hordeList.push_back(horde.at(i));
-				std::cout << "JOINED MY HORDE : " << dynamic_cast<Character*>(horde.at(i))->getName() << std::endl;
 			}
 		}
 	}
+}
+
+template<class T>
+inline std::vector<T*> Chief<T>::getHordeList()
+{
+	std::cout << this->getName() << "'s Horde : " << std::endl;
+	if (m_hordeList.size() > 0) {
+		for (int i = 0 ; i < m_hordeList.size() ; i++) {
+			std::cout << i+1 << " - " << dynamic_cast<Character*>(m_hordeList.at(i))->getName() << std::endl;
+		}
+	}
+	return m_hordeList;
 }

@@ -12,7 +12,6 @@
 
 #include "Weapon.h"
 #include "Armour.h"
-#include "Class.h"
 #include "Race.h"
 #include "Utility.h"
 
@@ -22,7 +21,6 @@ class Character : public GameObject
 
 		// CONSTRUCTOR & DESTRUCTOR
 		Character();
-		Character(Class* characterClass, Race* race, Weapon* leftHand, Weapon* rightHand, Armour* armour = nullptr);
 		virtual ~Character();
 
 		void attackTarget(Character *source, Character* target, Skill* skill);
@@ -33,7 +31,6 @@ class Character : public GameObject
 
 		// GETTER
 		Weapon* getWeapon();
-		Class::UnitClass getUnitEnumClass();
 		Race::UnitRace getUnitEnumRace();
 		int8_t getTeamNumber();
 
@@ -51,7 +48,6 @@ class Character : public GameObject
 		void setRightHandWeapon(Weapon* weapon);
 		void setDualHandWeapon(Weapon *weapon);
 		void setArmour(Armour* armour);
-		void setUnitClass(Class* characterClass);
 		void setUnitRace(Race* race);
 
 		// METHODS
@@ -82,7 +78,6 @@ class Character : public GameObject
 		int8_t m_teamNumber;
 
 		// OBJECTS
-		Class* m_unitClass = nullptr;
 		Race* m_unitRace = nullptr;
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;

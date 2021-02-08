@@ -1,9 +1,11 @@
 #include "Skill.h"
 
-
-Skill::Skill(int damage, int aoe, int range) :
-	m_damage(damage), m_areaOfEffect(aoe), m_range(range)
+Skill::Skill(int damage, Pattern* castingPattern, Pattern* aoePattern, bool applyOnAllies) :
+	m_damage(damage),
+	m_castingPattern(castingPattern), m_aoePattern(aoePattern),
+	m_applyOnAllies(applyOnAllies)
 {
+
 }
 
 Skill::~Skill()
@@ -23,6 +25,11 @@ void Skill::addEffect(Effect::EffectCategory category, Effect* effect)
 	}
 }
 
+bool Skill::getApplyOnAllies()
+{
+	return m_applyOnAllies;
+}
+
 Effect* Skill::getPrimaryEffect()
 {
 	return m_primaryEffect;
@@ -36,6 +43,16 @@ Effect* Skill::getSecondaryEffect()
 Effect::SkillType* Skill::getSkillType()
 {
 	return m_skillType;
+}
+
+Pattern* Skill::getCastingPattern()
+{
+	return m_castingPattern;
+}
+
+Pattern* Skill::getAoePattern()
+{
+	return m_aoePattern;
 }
 
 int Skill::getDamage()

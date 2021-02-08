@@ -14,10 +14,10 @@ class Class : public GameObject
 			WIZARD
 		};
 		UnitClass getClass();
-		Class(UnitClass classType = UnitClass::WARRIOR);
+		Class();
 
 	protected:
-		UnitClass m_classType;
+		UnitClass m_classType = UnitClass::WARRIOR;
 
 };
 #endif // !DEF_CLASS

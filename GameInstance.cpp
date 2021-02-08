@@ -18,43 +18,28 @@ GameInstance* GameInstance::getInstance()
 void GameInstance::startGame()
 {
 	// TEST GAME
-	m_char_1 = new AiCharacter();
-	m_char_1->setName("Karl Franz");
-	m_char_2 = new AiCharacter();
-	m_char_2->setName("Morathi");
+	m_char_1 = new Warrior();
+	m_char_1->setName("Archaon The Everchosen");
 
-	m_char_1->setUnitClass(new Warrior(Class::UnitClass::WARRIOR));
-	m_char_2->setUnitClass(new Warrior(Class::UnitClass::WARRIOR));
+	m_char_2 = new Warrior();
+	m_char_2->setName("Bloodthirster");
 
-	m_char_1->setDualHandWeapon(new Sword(true));
-
-	m_char_2->setRightHandWeapon(new Sword(false));
-	m_char_2->setLeftHandWeapon(new Sword(false));
-
-	m_char_1->attackTarget(m_char_1, m_char_2, m_char_1->getWeapon()->getMainSkill());
-
-	m_char_2->attackTarget(m_char_2, m_char_1, m_char_2->getWeapon()->getMainSkill());
-	m_char_2->attackTarget(m_char_2, m_char_1, dynamic_cast<OneHand*>(m_char_2->getWeapon())->getOffHandSkill());
-
-	Chief<AiCharacter>* m_char_3 = new Chief<AiCharacter>;
-	m_char_3->setUnitClass(new Warrior(Class::UnitClass::WARRIOR));
-
-	addCharacters(std::vector<Character *>({ m_char_1, m_char_2, m_char_3 }));
+	m_char_3 = new Chief<Warrior>(std::vector<Warrior*>({ dynamic_cast<Warrior*>(m_char_1), dynamic_cast<Warrior*>(m_char_2)}));
+	m_char_3->setName("Khorne");
+	m_char_3->setUnitRace(new Ork());
 
 
-	m_char_3->setName("Archaon the Everchosen");
-	m_char_3->setDualHandWeapon(new Sword(true));
-	m_char_3->attackTarget(m_char_3, m_char_1, m_char_3->getWeapon()->getMainSkill());
-	m_char_3->setDesignHordeTarget(m_char_2);
+	dynamic_cast<Chief<Warrior>*>(m_char_3)->getHordeList();
+	addCharacters(std::vector<Character*>({ m_char_1, m_char_2 }));
 
-	m_char_3->setHordeList(getAllCharacterOfClass(m_char_3->getUnitEnumClass()));
+	dynamic_cast<Chief<Warrior>*>(m_char_3)->setDesignHordeTarget(m_char_2);
 
 	std::this_thread::sleep_for(std::chrono::milliseconds((int)(10 * 1e3)));
 
-	/*
-	std::cout << "WORK IN PROGRESS IHIHIHIHIHIH" << std::endl;
-	exit(EXIT_SUCCESS);
-	*/
+
+	//std::cout << "WORK IN PROGRESS IHIHIHIHIHIH" << std::endl;
+	//exit(EXIT_SUCCESS);
+
 }
 
 GameInstance::GameInstance()
@@ -70,19 +55,13 @@ void GameInstance::addCharacters(std::vector<Character*> characters)
 	}
 }
 
-std::vector<AiCharacter*> GameInstance::getAllCharacterOfClass(Class::UnitClass unitClass)
-{
-	std::vector<AiCharacter*> m_charByClass;
-	std::map<std::string, Character*>::iterator it;
-	for (it = m_characterList.begin(); it != m_characterList.end(); it++) {
-		if (it->second->getUnitEnumClass() == unitClass) m_charByClass.push_back(dynamic_cast<AiCharacter *>(it->second));
-	}
-	return m_charByClass;
-}
-
 std::vector<AiCharacter*> GameInstance::getAllCharacterOfRace(Race::UnitRace unitRace)
 {
 	std::vector<AiCharacter*> m_charByRace;
+	std::map<std::string, Character*>::iterator it;
+	for (it = m_characterList.begin(); it != m_characterList.end(); it++) {
+		if (it->second->getUnitEnumRace() == unitRace) m_charByRace.push_back(dynamic_cast<AiCharacter*>(it->second));
+	}
 	return m_charByRace;
 }
 
