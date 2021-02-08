@@ -28,6 +28,8 @@ inline Chief<T>::Chief(std::vector<T> list)
 template<class T>
 inline Chief<T>::Chief()
 {
+	this->setMaxHp(m_maxHp * m_chiefStatsModifier);
+	std::cout << " MAX HP : " << m_maxHp << std::endl;;
 }
 
 template<class T>

@@ -4,6 +4,9 @@
 #include "Class.h"
 class Warrior : public Class
 {
+	public:
+	private:
+
 };
 
 #endif // !DEF_WARRIOR

@@ -196,7 +196,7 @@ Class::UnitClass *Character::getClass()
 	return m_class->getClass();
 }
 
-Race::CharacterRace *Character::getRace()
+Race::UnitRace*Character::getRace()
 {
 	return m_race->getRaceType();
 }

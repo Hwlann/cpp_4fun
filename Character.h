@@ -34,7 +34,7 @@ class Character : public GameObject
 		// GETTER
 		Weapon* getWeapon();
 		Class::UnitClass* getClass();
-		Race::CharacterRace* getRace();
+		Race::UnitRace* getRace();
 		int8_t getTeamNumber();
 
 		// SETTERS

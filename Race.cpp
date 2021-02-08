@@ -1,6 +1,6 @@
 #include "Race.h"
 
-Race::Race(CharacterRace type) :
+Race::Race(UnitRace type) :
 	m_raceType(type)
 {
 }
@@ -19,7 +19,7 @@ std::pair<Effect::EffectTarget, float>* Race::getRaceStatModifier()
 	return &m_statModifier;
 }
 
-Race::CharacterRace* Race::getRaceType()
+Race::UnitRace* Race::getRaceType()
 {
 	return &m_raceType;
 }
