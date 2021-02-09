@@ -2,9 +2,8 @@
 #ifndef DEF_WARRIOR
 #define DEF_WARRIOR
 #include "Class.h"
-#include "AiCharacter.h"
 
-class Warrior : public Class, public AiCharacter
+class Warrior : public Class
 {
 	public:
 		Warrior();

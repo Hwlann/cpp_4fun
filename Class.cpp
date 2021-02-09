@@ -1,6 +1,6 @@
 #include "Class.h"
 
-Class::UnitClass Class::getClass()
+Class::UnitClass Class::getUnitClass()
 {
 	return m_classType;
 }

@@ -1,5 +1,6 @@
 #pragma once
-class PlateArmour
+#include "Armour.h"
+class PlateArmour : public Armour
 {
 };
 

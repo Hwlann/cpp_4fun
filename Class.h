@@ -13,7 +13,7 @@ class Class : public GameObject
 			RANGER,
 			WIZARD
 		};
-		UnitClass getClass();
+		UnitClass getUnitClass();
 		Class();
 
 	protected:

@@ -5,12 +5,25 @@
 #include "GameObject.h"
 #include "Map.h"
 
+// SPAWNALES
 #include "AiCharacter.h"
-#include "Sword.h"
 #include "Chief.h"
-#include "Warrior.h"
-#include "Ork.h"
 
+// CLASSES
+#include "Warrior.h"
+
+// RACES
+#include "Ork.h"
+#include "Human.h"
+
+// WEAPONS
+#include "Sword.h"
+
+// ARMOURS
+#include "PlateArmour.h";
+#include "ChainmailArmour.h"
+
+// TIME MANAGEMENT
 #include <thread>
 #include <chrono>
 
@@ -21,17 +34,14 @@ class GameInstance : public GameObject
         virtual ~GameInstance();
         void startGame();
         GameInstance();
-        void addCharacters(std::vector<Character*>characters);
+        inline void addCharacter(std::string name, Class* unitClass, Race* unitRace, Character* character,
+                                 Armour* armour, Weapon* leftHand, Weapon* rightHand, int team);
         std::vector<AiCharacter*> getAllCharacterOfRace(Race::UnitRace unitRace);
+        std::vector<AiCharacter*> getAllCharacterOfClass(Class::UnitClass unitClass, Race::UnitRace unitRace);
 
     private:
         static GameInstance* m_gameInstance;
         std::map<std::string, Character *> m_characterList;
-
-        Character* m_char_1 = nullptr;
-        Character* m_char_2 = nullptr;
-        Character* m_char_3 = nullptr;
-
 };
 #endif
 

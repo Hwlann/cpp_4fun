@@ -104,6 +104,9 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Miscellanous</Filter>
     </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Class &amp; Race\Race</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -210,6 +213,9 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Miscellanous</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Class &amp; Race\Race</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

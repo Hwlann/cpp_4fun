@@ -10,6 +10,7 @@
 #include <map>
 #include <vector>
 
+#include "Class.h"
 #include "Weapon.h"
 #include "Armour.h"
 #include "Race.h"
@@ -32,6 +33,7 @@ class Character : public GameObject
 		// GETTER
 		Weapon* getWeapon();
 		Race::UnitRace getUnitEnumRace();
+		Class::UnitClass getUnitEnumClass();
 		int8_t getTeamNumber();
 
 		// SETTERS
@@ -49,6 +51,7 @@ class Character : public GameObject
 		void setDualHandWeapon(Weapon *weapon);
 		void setArmour(Armour* armour);
 		void setUnitRace(Race* race);
+		void setUnitClass(Class* unitClass);
 
 		// METHODS
 		// HEATLH 
@@ -79,6 +82,7 @@ class Character : public GameObject
 
 		// OBJECTS
 		Race* m_unitRace = nullptr;
+		Class* m_unitClass = nullptr;
 		Weapon *m_leftHand = nullptr;
 	    Weapon *m_rightHand = nullptr;
 		Armour *m_armour = nullptr;

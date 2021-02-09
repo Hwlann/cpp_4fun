@@ -109,6 +109,11 @@ void Character::setUnitRace(Race* race)
 	m_unitRace = race;
 }
 
+void Character::setUnitClass(Class* unitClass)
+{
+	m_unitClass = unitClass;
+}
+
 void Character::addEffectToCharacter(Effect* effect)
 {
 	bool alreadyExist = false;
@@ -179,6 +184,11 @@ Weapon* Character::getWeapon()
 Race::UnitRace Character::getUnitEnumRace()
 {
 	return m_unitRace->getRaceType();
+}
+
+Class::UnitClass Character::getUnitEnumClass()
+{
+	return  m_unitClass->getUnitClass();
 }
 
 int8_t Character::getTeamNumber()

@@ -1,5 +1,7 @@
 #pragma once
-class ChainmailArmour
+#include "Armour.h"
+
+class ChainmailArmour : public Armour
 {
 };
 

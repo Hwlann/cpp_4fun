@@ -24,9 +24,9 @@ class Weapon : public Equipment
 		WeaponSize* getWeaponSize();
 
 
-	private:
-		WeaponType* m_weaponType = nullptr;
-		WeaponSize* m_weaponSize = nullptr;
+	protected:
+		WeaponType m_weaponType;
+		WeaponSize m_weaponSize;
 
 };
 
