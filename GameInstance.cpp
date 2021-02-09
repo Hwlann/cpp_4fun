@@ -15,10 +15,12 @@ GameInstance* GameInstance::getInstance()
 	return m_gameInstance;
 }
 
-void GameInstance::startGame()
+void GameInstance::startGame(Character* playerCharacter, int difficulty)
 {
 	// TEST GAME
 	std::cout << __func__ << std::endl;
+	//m_characterList.insert(std::pair<std::string, Character*>(PLAYER_CHARACTER_KEY, playerCharacter));
+
 	addCharacter("Gork", new Warrior(), new Ork(), new Chief<AiCharacter>(), new PlateArmour(), new Sword(true), nullptr,  1);
 	addCharacter("Ironjaws", new Warrior(), new Ork(), new AiCharacter(), new PlateArmour(), new Sword(false), new Sword(false), 1 );
 	addCharacter("Bonejaws", new Warrior(), new Ork(), new AiCharacter(), new PlateArmour(), new Sword(false), new Sword(false), 1);
@@ -29,6 +31,8 @@ void GameInstance::startGame()
 	dynamic_cast<Chief<AiCharacter>*>(m_characterList.at("Gork"))->setHordeList(getAllCharacterOfClass(Class::UnitClass::WARRIOR, m_characterList.at("Gork")->getUnitEnumRace()));
 	dynamic_cast<Chief<AiCharacter>*>(m_characterList.at("Gork"))->getHordeList();
 	dynamic_cast<Chief<AiCharacter>*>(m_characterList.at("Gork"))->setDesignHordeTarget(m_characterList.at("Michel"));
+
+	m_characterList.at("Gork")->attackTarget(m_characterList.at("Gork"), m_characterList.at("Michel"), m_characterList.at("Gork")->getLeftHandWeapon()->getMainSkill());
 
 	std::this_thread::sleep_for(std::chrono::milliseconds((int)(10 * 1e3)));
 

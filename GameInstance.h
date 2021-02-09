@@ -27,12 +27,15 @@
 #include <thread>
 #include <chrono>
 
+
+#define PLAYER_CHARACTER_KEY "player"
+
 class GameInstance : public GameObject
 {
     public:
         static GameInstance* getInstance();
         virtual ~GameInstance();
-        void startGame();
+        void startGame(Character *playerCharacter, int difficulty);
         GameInstance();
         inline void addCharacter(std::string name, Class* unitClass, Race* unitRace, Character* character,
                                  Armour* armour, Weapon* leftHand, Weapon* rightHand, int team);

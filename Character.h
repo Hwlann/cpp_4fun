@@ -31,7 +31,8 @@ class Character : public GameObject
 		void applyEffects();
 
 		// GETTER
-		Weapon* getWeapon();
+		Weapon* getRightHandWeapon();
+		Weapon* getLeftHandWeapon();
 		Race::UnitRace getUnitEnumRace();
 		Class::UnitClass getUnitEnumClass();
 		int8_t getTeamNumber();

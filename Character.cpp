@@ -176,9 +176,14 @@ void Character::applyEffects()
 	}
 }
 
-Weapon* Character::getWeapon()
+Weapon* Character::getRightHandWeapon()
 {
 	return m_rightHand;
+}
+
+Weapon* Character::getLeftHandWeapon()
+{
+	return m_leftHand;
 }
 
 Race::UnitRace Character::getUnitEnumRace()

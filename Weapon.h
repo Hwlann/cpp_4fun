@@ -18,7 +18,6 @@ class Weapon : public Equipment
 			TWO_HANDS
 		};
 
-		Weapon();
 		virtual ~Weapon();
 		WeaponType* getWeaponType();
 		WeaponSize* getWeaponSize();
