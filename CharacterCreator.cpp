@@ -75,11 +75,25 @@ void CharacterCreator::drawCharacterSkills()
 	if (title.is_open())
 		std::cout << title.rdbuf() << std::endl;
 
-	for (int i = 1; i < m_creatorMenus.at(m_menuIndex).size(); i++) {
-		std::cout << "\t\t\t";
-		(i == m_vIndex) ? std::cout << DEF_SELECT_CHAR << " " : std::cout << "  ";
-		std::cout << Utility::printT(m_creatorMenus.at(m_menuIndex).at(i), myMarvelousMap) << std::endl;
-	}
+	std::cout << "\n\n";
+
+	std::cout << "\t\tSelect your abilities :" << std::endl;
+
+	std::cout << "\n\t\t" << Utility::printT("Skill amount : {{ $m_currSkillsAmount }}", myMarvelousMap);
+
+	std::cout << "\n\n\t\tStrength :";
+	std::cout << "\n\t\t" << ((m_vIndex == 1) ? "> " : "  ") << Utility::printT(m_creatorMenus.at(m_menuIndex).at(1), myMarvelousMap);
+
+	std::cout << "\n\n\t\tDexterity :";
+	std::cout << "\n\t\t" << ((m_vIndex == 2) ? "> " : "  ") << Utility::printT(m_creatorMenus.at(m_menuIndex).at(2), myMarvelousMap);
+
+	std::cout << "\n\n\t\tIntelligence :";
+	std::cout << "\n\t\t" << ((m_vIndex == 3) ? "> " : "  ") << Utility::printT(m_creatorMenus.at(m_menuIndex).at(3), myMarvelousMap);
+
+	std::cout << "\n\n";
+	std::cout << "\n\t\t" << ((m_vIndex == 4) ? "> " : "  ") << m_creatorMenus.at(m_menuIndex).at(4);
+	std::cout << "\n\t\t" << ((m_vIndex == 5) ? "> " : "  ") << m_creatorMenus.at(m_menuIndex).at(5);
+
 	selectAction(m_menuIndex);
 }
 
@@ -180,6 +194,63 @@ void CharacterCreator::selectAction(int menuIndex)
 				break;
 			}
 		}
+		if (menuIndex == DEF_SKILLSMENU)
+		{
+			if (ascii_value == 77 && m_vIndex == 1)
+			{
+				if (m_currStrength < 6 && m_currSkillsAmount > 0)
+				{
+					m_currStrength++;
+					m_currSkillsAmount--;
+					Utility::clamp(&m_currSkillsAmount, 0, 15);
+				}
+			}
+			if (ascii_value == 75 && m_vIndex == 1)
+			{
+				if (m_currStrength > 0)
+				{
+					m_currStrength--;
+					Utility::clamp(&m_currStrength, 0, 15);
+					m_currSkillsAmount++;
+				}
+			}
+			if (ascii_value == 77 && m_vIndex == 2)
+			{
+				if (m_currDexterity < 6 && m_currSkillsAmount > 0)
+				{
+					m_currDexterity++;
+					m_currSkillsAmount--;
+					Utility::clamp(&m_currSkillsAmount, 0, 15);
+				}
+			}
+			if (ascii_value == 75 && m_vIndex == 2)
+			{
+				if (m_currDexterity > 0)
+				{
+					m_currDexterity--;
+					Utility::clamp(&m_currDexterity, 0, 15);
+					m_currSkillsAmount++;
+				}
+			}
+			if (ascii_value == 77 && m_vIndex == 3)
+			{
+				if (m_currIntelligence < 6 && m_currSkillsAmount > 0)
+				{
+					m_currIntelligence++;
+					m_currSkillsAmount--;
+					Utility::clamp(&m_currSkillsAmount, 0, 15);
+				}
+			}
+			if (ascii_value == 75 && m_vIndex == 3)
+			{
+				if (m_currIntelligence > 0)
+				{
+					m_currIntelligence--;
+					Utility::clamp(&m_currIntelligence, 0, 15);
+					m_currSkillsAmount++;
+				}
+			}
+		}
 
 		if (ascii_value == 80)
 		{
@@ -187,9 +258,6 @@ void CharacterCreator::selectAction(int menuIndex)
 			if (m_vIndex > maxIndex) {
 				m_vIndex = 1;
 			}
-
-			drawMenu(menuIndex);
-			break;
 		}
 		else if (ascii_value == 72)
 		{
@@ -197,15 +265,14 @@ void CharacterCreator::selectAction(int menuIndex)
 			if (m_vIndex < 1) {
 				m_vIndex = maxIndex;
 			}
-
-			drawMenu(menuIndex);
-			break;
 		}
 		else if (ascii_value == 13) {
 
 			menuSelected(menuIndex, m_vIndex);
 			break;
 		}
+
+		drawMenu(menuIndex);
 	}
 }
 
@@ -217,13 +284,13 @@ void CharacterCreator::drawMenu(int menuIndex)
 	switch (menuIndex)
 	{
 		case DEF_SETUPMENU:
-				drawCharacterSetup();
+			drawCharacterSetup();
 			break;
 		case DEF_RACEMENU:
-				drawCharacterRace();
+			drawCharacterRace();
 			break;
 		case DEF_SKILLSMENU:
-				drawCharacterSkills();
+			drawCharacterSkills();
 			break;
 	}
 }
@@ -248,55 +315,78 @@ void CharacterCreator::menuSelected(int menuIndex, int index)
 			case DEF_SETUPMENU:
 				switch (m_vIndex)
 				{
-				case 1:
-					drawCharacterSetup();
-					break;
+					case 1:
+						drawCharacterSetup();
+						break;
 
-				case 2:
-					drawCharacterSetup();
-					break;
+					case 2:
+						drawCharacterSetup();
+						break;
 
-				case 3:
-					m_vIndex = 1;
-					Utility::writeToFile("player.cnf", 0, std::string("Name : " + m_characterName + "\n"));
-					Utility::writeToFile("player.cnf", 1, std::string("Class : " + getClassNameFromEnum() + "\n"));
-					drawMenu(DEF_RACEMENU);
-					return;
-					break;
+					case 3:
+						m_vIndex = 1;
+						if (m_characterName == "")
+						{
+							m_characterName = "Lancelot";
+						}
+						Utility::writeToFile("player.cnf", 0, std::string("Name : " + m_characterName + "\n"));
+						Utility::writeToFile("player.cnf", 1, std::string("Class : " + getClassNameFromEnum() + "\n"));
+						drawMenu(DEF_RACEMENU);
+						return;
+						break;
 
-				case 4:
-					m_vIndex = 1;
-					GameManager::getInstance()->goToMainMenu();
-					break;
+					case 4:
+						m_vIndex = 1;
+						GameManager::getInstance()->goToMainMenu();
+						break;
 				}
 				break;
 			case DEF_RACEMENU:
 				switch (m_vIndex)
 				{
-				case 1:
-					m_vIndex++;
-					break;
-				case 2:
-					m_vIndex = 1;
-					Utility::writeToFile("player.cnf", 2, std::string("Race : " + getRaceNameFromEnum() + "\n"));
-					drawMenu(DEF_SKILLSMENU);
-					return;
-					break;
-				case 3:
-					drawMenu(DEF_SETUPMENU);
-					break;
+					case 1:
+						m_vIndex++;
+						break;
+					case 2:
+						m_vIndex = 1;
+						Utility::writeToFile("player.cnf", 2, std::string("Race : " + getRaceNameFromEnum() + "\n"));
+						drawMenu(DEF_SKILLSMENU);
+						return;
+						break;
+					case 3:
+						m_vIndex = 1;
+						drawMenu(DEF_SETUPMENU);
+						break;
 				}
 				break;
 			case DEF_SKILLSMENU:
 				switch (m_vIndex)
 				{
-				case 1:
-					break;
-				case 2:
-					
-					break;
-				case 3:
-					break;
+					case 1:
+						drawMenu(DEF_SKILLSMENU);
+						break;
+
+					case 2:
+						drawMenu(DEF_SKILLSMENU);
+						break;
+
+					case 3:
+						drawMenu(DEF_SKILLSMENU);
+						break;
+
+					case 4:
+						Utility::writeToFile("player.cnf", 3, std::string("Stength : " + std::to_string(m_currStrength) + "\n"));
+						Utility::writeToFile("player.cnf", 4, std::string("Dexterity : " + std::to_string(m_currDexterity) + "\n"));
+						Utility::writeToFile("player.cnf", 5, std::string("Intelligence : " + std::to_string(m_currIntelligence) + "\n"));
+
+						GameManager::getInstance()->initGame();
+						return;
+						break;
+
+					case 5:
+						m_vIndex = 1;
+						drawMenu(DEF_SETUPMENU);
+						break;
 				}
 				break;
 			}
