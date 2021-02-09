@@ -59,6 +59,7 @@ private:
 	int m_vIndex = 1;
 
 	int m_currSkillsAmount = 15;
+
 	int m_currStrength = 0;
 	int m_currDexterity = 0;
 	int m_currIntelligence = 0;
@@ -74,13 +75,28 @@ private:
 	std::map<std::string, std::string*> myWonderfullMap;
 
 	std::vector<std::vector<std::string>> m_creatorMenus = {
-												{ "character-creation", "{{ &m_characterName }}", "<  {{ &getClassNameFromEnum }}  >", "Accept", "Back" },
-												{ "character-creation", "<     Select your race     >", "Accept", "Back" },
-												{ "character-creation", "\nSelect your abilities :", "\n\nSkill amount : {{ $m_currSkillsAmount }}",
-												"\nStrength", "\n<    {{ $m_currStrength }}    >", "\n\nDexterity", "\n<    {{ $m_currDexterity }}    >",
-												"\n\nIntelligence", "\n<    {{ $m_currIntelligence }}    >", "\n\nAccept", "\nBack" }
-											};
+																{ 
+																	"character-creation", 
+																	"{{ &m_characterName }}", 
+																	"<  {{ &getClassNameFromEnum }}  >", 
+																	"Accept", 
+																	"Back" 
+																},
+																{ 
+																	"character-creation", 
+																	"<     Select your race     >", 
+																	"Accept", 
+																	"Back" 
+																},
+																{ 
+																	"character-creation", 
+																	"<    {{ $m_currStrength }}    >", 
+																	"<    {{ $m_currDexterity }}    >",
+																	"<    {{ $m_currIntelligence }}    >", 
+																	"Accept", 
+																	"Back" 
+																}
+															};
 
 	CharacterCreator(std::string name = "CharacterCreator");
 };
-
